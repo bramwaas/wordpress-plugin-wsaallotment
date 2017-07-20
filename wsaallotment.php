@@ -2,7 +2,7 @@
 /*
 Plugin Name: wsa allotment
 Plugin URI:  http://www.waasdorpsoekhan.nl/wsaallotment
-Description: Plugin for management allotment entities
+Description: Wordpress plugin for management of allotment entities. Designed for Volkstuinvereniging Linnaeus.
 Version:     0.1
 Author:      Bram Waasdorp
 Author URI:  https://www.waasdorpsoekhan.nl/
