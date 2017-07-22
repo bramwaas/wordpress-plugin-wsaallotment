@@ -76,7 +76,7 @@ final class WsaAllotment_Plugin {
 	/**
 	 * Sets up globals.
 	 *
-	 * @since  1.0.0
+	 * @since  0.1.0
 	 * @access private
 	 * @return void
 	 */
@@ -97,7 +97,7 @@ final class WsaAllotment_Plugin {
 		// Load class files.
 //		require_once( $this->dir . 'inc/class-capability.php' );
 		// Load includes files.
-//		require_once( $this->dir . 'inc/functions.php'                     );
+		require_once( $this->dir . 'inc/function-shortcodes.php'                     );
 		// Load template files.
 //		require_once( $this->dir . 'inc/template.php' );
 		// Load admin files.
@@ -137,14 +137,14 @@ final class WsaAllotment_Plugin {
 	/**
 	 * Loads the translation files.
 	 *
-	 * @since  1.0.0
+	 * @since  0.1.0
 	 * @access public
 	 * @return void
 	 */
 	public function i18n() {
 		load_plugin_textdomain( 'wsaallotment', false, trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . 'language' );
 	}
-
+}
 	
 /**
  * Gets the instance of the `WsaAllotment_Plugin` class.  This function is useful for quickly grabbing data
