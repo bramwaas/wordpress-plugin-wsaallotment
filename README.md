@@ -13,14 +13,14 @@ to Wordpress user and managed and used to restrict content.
 
 This project is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2009&thinsp;&ndash;&thinsp;2017 &copy; [Bram Waasdorp](http://www.waasdorpsoekhan.nl).
+2017&thinsp;&ndash;&thinsp;2017 &copy; [Bram Waasdorp](http://www.waasdorpsoekhan.nl).
 
 ## Documentation
 
 ### The relationship of website-user, gardener and allotment
 
-user 		unique-key 	emailaddress
-gardener	unique-key	emailaddress
+user 		unique-key 	user_email
+gardener	unique-key	user_email
 			foreign-key section, allotmentnr
 allotment	unique-key	section, allotmentnr 
 

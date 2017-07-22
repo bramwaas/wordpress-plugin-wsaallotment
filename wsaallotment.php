@@ -144,6 +144,37 @@ final class WsaAllotment_Plugin {
 	public function i18n() {
 		load_plugin_textdomain( 'wsaallotment', false, trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . 'language' );
 	}
+	/**
+	 * Magic method to output a string if trying to use the object as a string.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function __toString() {
+		return 'Wsa Allotment';
+	}
+	/**
+	 * Magic method to keep the object from being cloned.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return void
+	 */
+	public function __clone() {
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Whoah, partner!', 'wsaallotment' ), '1.0.0' );
+	}
+	/**
+	 * Magic method to keep the object from being unserialized.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return void
+	 */
+	public function __wakeup() {
+		_doing_it_wrong( __FUNCTION__, esc_html__( 'Whoah, partner!', 'wsaallotment' ), '1.0.0' );
+	}
+	
 }
 	
 /**
