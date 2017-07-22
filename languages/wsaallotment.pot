@@ -1,0 +1,45 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-22 11:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: inc/function-shortcodes.php:131
+msgid "Voorlopig alleen email van tuinier: "
+msgstr ""
+
+#: inc/function-shortcodes.php:147
+msgid "Voorlopig alleen email van tuintje: "
+msgstr ""
+
+#. Name of the plugin
+msgid "Wsa Allotment"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Wordpress plugin for management of allotment entities. Designed for "
+"Volkstuinvereniging Linnaeus."
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/bramwaas/wordpress-plugin-wsaallotment"
+msgstr ""
+
+#. Author of the plugin
+msgid "Bram Waasdorp"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.waasdorpsoekhan.nl/"
+msgstr ""
