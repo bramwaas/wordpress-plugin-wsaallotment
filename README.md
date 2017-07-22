@@ -1,4 +1,4 @@
-# wordpress-plugin-wsaallotment
+# wordpress plugin wsa allotment
 
 Wordpress plugin for management of allotment entities. Designed summer 2017 for the new website of the Volkstuinvereniging Linnaeus.
 In this plugin are the entities allotment related person (gardener) and allotment (garden) created related  

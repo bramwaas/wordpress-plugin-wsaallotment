@@ -6,7 +6,7 @@
  * @subpackage Includes
  * @author     Bram Waasdorp <bram@waasdorpsoekhan.nl>
  * @copyright  Copyright (c)  2017, Bram Waasdorp
- * @link       http://www.waasdorpsoekhan.nl/wsaallotment
+ * @link       https://github.com/bramwaas/wordpress-plugin-wsaallotment
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 # Add shortcodes.
@@ -18,7 +18,7 @@ add_action( 'init', 'wsaallotment_register_shortcodes' );
  * @access public
  * @return void
  */
-function members_register_shortcodes() {
+function wsaallotment_register_shortcodes() {
 	// Add the `[view_gardener]` shortcode.
 	add_shortcode( 'view_gardener', 'view_gardener_shortcode' );
 	// Add the `[view_allotment]` shortcode.
