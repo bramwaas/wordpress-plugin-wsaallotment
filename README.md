@@ -19,17 +19,17 @@ This project is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-lic
 
 ### The relationship of website-user, gardener and allotment
 
-user 		unique-key 	user_email
-gardener	unique-key	user_email
+* **user** 		unique-key 	user_email
+* **gardener**	unique-key	user_email
 			foreign-key section, allotmentnr
-allotment	unique-key	section, allotmentnr 
+* **allotment**	unique-key	section, allotmentnr 
 
 ### Shortcodes:
-view_gardener		displays a single gardner selected by emailaddress of user
-view_allotment		displays a single allotment selected by emailaddress of user
-update_gardeners	displays a list of gardners selected by criteria; and update an item from the list or create a new.
-update_allotments	displays a list of allotments selected by criteria; and update an item from the list or create a new.
-is_gardener			displays content only when user is a gardener
-not_gardener		displays content only when user is not a gardener  
-is_allotment_owner	displays content only when user is owner of (related to) an allotment
-not_allotment_owner	displays content only when user is not owner of (related to) an allotment  
+* **view_gardener**		displays a single gardner selected by emailaddress of user
+* **view_allotment**		displays a single allotment selected by emailaddress of user
+* **update_gardeners**	displays a list of gardners selected by criteria; and update an item from the list or create a new
+* **update_allotments**	displays a list of allotments selected by criteria; and update an item from the list or create a new.
+* **is_gardener**			displays content only when user is a gardener
+* **not_gardener**		displays content only when user is not a gardener  
+* **is_allotment_owner**	displays content only when user is owner of (related to) an allotment
+* **not_allotment_owner**	displays content only when user is not owner of (related to) an allotment  

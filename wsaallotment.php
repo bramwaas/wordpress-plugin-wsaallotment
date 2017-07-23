@@ -98,6 +98,7 @@ final class WsaAllotment_Plugin {
 //		require_once( $this->dir . 'inc/class-capability.php' );
 		// Load includes files.
 		require_once( $this->dir . 'inc/function-shortcodes.php'                     );
+		require_once( $this->dir . 'inc/function-database.php'                       );
 		// Load template files.
 //		require_once( $this->dir . 'inc/template.php' );
 		// Load admin files.
@@ -144,6 +145,19 @@ final class WsaAllotment_Plugin {
 	public function i18n() {
 		load_plugin_textdomain( 'wsaallotment', false, trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . 'language' );
 	}
+	
+	/**
+	 * Method that runs only when the plugin is activated.
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return void
+	 */
+	public function activation() {
+		// Create db-tables
+		wsaallotment_install_db();
+	}
+
 	/**
 	 * Magic method to output a string if trying to use the object as a string.
 	 *
