@@ -1,6 +1,6 @@
 <?php
 /**
- * Shortcodes for use within posts and other shortcode-aware areas.
+ * Database actionss.
  *
  * @package    wsa allotment
  * @subpackage Includes
@@ -9,8 +9,8 @@
  * @link       https://github.com/bramwaas/wordpress-plugin-wsaallotment
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-# Add shortcodes.
-add_action( 'init', 'wsaallotment_register_shortcodes' );
+# Add dbcheck.
+add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
 /**
  * Registers shortcodes.
  *
@@ -18,133 +18,57 @@ add_action( 'init', 'wsaallotment_register_shortcodes' );
  * @access public
  * @return void
  */
-function wsaallotment_register_shortcodes() {
-	// Add the `[view_gardener]` shortcode.
-	add_shortcode( 'view_gardener', 'view_gardener_shortcode' );
-	// Add the `[view_allotment]` shortcode.
-	add_shortcode( 'view_allotment', 'view_allotment_shortcode' );
-	// Add the `[update_gardeners]` shortcode.
-	add_shortcode( 'update_gardeners', 'update_gardeners_shortcode' );
-	// Add the `[update_allotments]` shortcode.
-	add_shortcode( 'update_allotments', 'update_allotments_shortcode' );
-	// Add the `[is_gardener]` shortcode.
-	add_shortcode( 'is_gardener', 'is_gardener_shortcode' );
-	// Add the `[not_gardener]` shortcode.
-	add_shortcode( 'not_gardener', 'not_gardener_shortcode' );
-	// Add the `[is_allotment-owner]` shortcode.
-	add_shortcode( 'is_allotment_owner', 'is_allotment-owner_shortcode' );
-	// Add the `[not_allotment-owner]` shortcode.
-	add_shortcode( 'not_allotment_owner', 'not_allotment-owner_shortcode' );
-}
+global $wsaallotment_db_version;
+$wsaallotment_db_version = '0.1';
+
+function wsaallotment_install_db() {
+	// set tablenames with prefix  in a variable
+	global $wpdb;
+	$table_name_gardener  = $wpdb->prefix . "gardener";
+	$table_name_allotment = $wpdb->prefix . "allotment";
+	$charset_collate = $wpdb->get_charset_collate();
 /**
- * Check if email is is related to a gardener. 
- * Default email is email-address of logged in user.
- *
- * @since  0.1.0
- * @access public
- * @param  array   $attr
- * @param  string  $email
- * @return boolean
- */
-function is_gardener( $email = null ) {
+ * Create statements following the picky rules of dbDelta
+ * You must put each field on its own line in your SQL statement.
+ * You must have two spaces between the words PRIMARY KEY and the definition of your primary key.
+ * You must use the key word KEY rather than its synonym INDEX and you must include at least one KEY.
+ * KEY must be followed by a SINGLE SPACE then the key name then a space then open parenthesis with the field name then a closed parenthesis.
+ * You must not use any apostrophes or backticks around field names.
+ * Field types must be all lowercase.
+ * SQL keywords, like CREATE TABLE and UPDATE, must be uppercase.
+ * You must specify the length of all fields that accept a length parameter. int(11), for example.
+ */	
+	$sql = "CREATE TABLE $table_name_gardener (
+	gardener_id mediumint(9) NOT NULL AUTO_INCREMENT,
+    user_login varchar(60),
+	gardener_email varchar(100),
+    initials varchar(10),
+    infix varchar(20),
+    last_name varchar(60) NOT NULL,
+    first_name varchar(60),
+	allotment_section varchar(1),
+	allotment_nr tinyint(3),
+	PRIMARY KEY  (gardener_id),
+	UNIQUE KEY fk_user (user_login),
+    KEY fk_allotment (allotment_section, allotment_nr)
+	) $charset_collate;";
 	
-	return false;
-}
-
-/**
- * Check if email is is related to a allotment. 
- * Default email is email-address of logged in user.
- *
- * @since  0.1.0
- * @access public
- * @param  array   $attr
- * @param  string  $email
- * @return boolean
- */
-function is_allotment( $email = null ) {
+	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+	dbDelta( $sql );
 	
-	return false;
+	add_option( 'wsaallotment_db_version', $wsaallotment_db_version );
 }
-
 /**
- * Displays content if the user viewing it is currently logged in and related to a gardener. 
- * This also blocks content from showing in feeds.
+ * Check on current  db-version . 
+ * Update if not equal.
  *
  * @since  0.1.0
  * @access public
- * @param  array   $attr
- * @param  string  $content
- * @return string
+ * @return void
  */
-function is_gardener_shortcode( $attr, $content = null ) {
-	return is_feed() || ! is_gardener() || is_null( $content ) ? '' : do_shortcode( $content );
-}
-/**
- * Displays content if the user viewing it is not currently logged in or not related to a gardener.
- *
- * @since  0.1.0
- * @access public
- * @param  array   $attr
- * @param  string  $content
- * @return string
- */
-function not_gardener_shortcode( $attr, $content = null ) {
-	return is_gardener() || is_null( $content ) ? '' : do_shortcode( $content );
-}
-/**
- * Displays content if the user viewing it is currently logged in and related to an allotment. 
- * This also blocks content from showing in feeds.
- *
- * @since  0.1.0
- * @access public
- * @param  array   $attr
- * @param  string  $content
- * @return string
- */
-function is_allotment_owner_shortcode( $attr, $content = null ) {
-	return is_feed() || ! is_allotment_owner() || is_null( $content ) ? '' : do_shortcode( $content );
-}
-/**
- * Displays content if the user viewing it is not currently logged in or not related to an allotment.
- *
- * @since  0.1.0
- * @access public
- * @param  array   $attr
- * @param  string  $content
- * @return string
- */
-function not_allotment_owner_shortcode( $attr, $content = null ) {
-	return is_allotment_owner() || is_null( $content ) ? '' : do_shortcode( $content );
-}
-
-/**
- * Displays a view gardener form.
- *
- * @since  0.1.0
- * @access public
- * @return string
- */
-function view_gardener_shortcode($attr, $content = null) {
-	$content = 'Geen user gevonden';
-        $current_user = wp_get_current_user(); 
-        if ( ( $current_user instanceof WP_User ) ) {
-         	$content = __('Voorlopig alleen email van tuinier: ', 'wsaallotment') . esc_html( $current_user->user_email );
+function wsaallotment_update_db_check() {
+	global $wsaallotment_db_version;
+	if ( get_site_option( 'wsaallotment_db_version' ) != $wsaallotment_db_version) {
+		wsaallotment_install_db();
 	}
- 	return $content;
-}
-
-/**
- * Displays a view allotment form.
- *
- * @since  0.1.0
- * @access public
- * @return string
- */
-function view_allotment_shortcode($attr, $content = null) {
-	$content = 'Geen user gevonden';
-        $current_user = wp_get_current_user(); 
-        if ( ( $current_user instanceof WP_User ) ) {
-         	$content = __('Voorlopig alleen email van tuintje: ', 'wsaallotment') . esc_html( $current_user->user_email );
-	}
- 	return $content;
 }
