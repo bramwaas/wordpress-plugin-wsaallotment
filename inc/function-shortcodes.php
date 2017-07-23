@@ -128,7 +128,9 @@ function view_gardener_shortcode($attr, $content = null) {
 	$content = 'Geen user gevonden';
         $current_user = wp_get_current_user(); 
         if ( ( $current_user instanceof WP_User ) ) {
-         	$content = __('Voorlopig alleen email van tuinier: ', 'wsaallotment') . esc_html( $current_user->user_email );
+        	$content = __('Voorlopig alleen email van tuinier: ', 'wsaallotment') . 
+        	  esc_html( $current_user->user_email . '<br>'. $current_user->user_login 
+        	  		. '<br> wsaallotment_db_version:' . get_site_option( 'wsaallotment_db_version'));
 	}
  	return $content;
 }
