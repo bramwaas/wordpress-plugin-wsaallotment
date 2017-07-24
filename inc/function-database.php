@@ -9,8 +9,6 @@
  * @link       https://github.com/bramwaas/wordpress-plugin-wsaallotment
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-# Add dbcheck.
-add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
 /**
  * Registers shortcodes.
  *

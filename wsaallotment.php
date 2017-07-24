@@ -47,14 +47,6 @@ final class WsaAllotment_Plugin {
 	 * @access public
 	 * @var    string
 	 */
-	private $php_version = '5.3.0';
-	/**
-	 * Plugin directory path.
-	 *
-	 * @since  0.1.0
-	 * @access public
-	 * @var    string
-	 */
 	public $dir = '';
 	/**
 	 * Plugin directory URI.
@@ -82,8 +74,8 @@ final class WsaAllotment_Plugin {
 	 */
 	private function setup() {
 		// Main plugin directory path and URI.
-		$this->dir = trailingslashit( plugin_dir_path( __FILE__ ) );
-		$this->uri  = trailingslashit( plugin_dir_url(  __FILE__ ) );
+		$this->dir =  plugin_dir_path( __FILE__ );
+		$this->uri =  plugin_dir_url(  __FILE__ ); 
 	}
 
 	/**
@@ -104,9 +96,17 @@ final class WsaAllotment_Plugin {
 		// Load admin files.
 		if ( is_admin() ) {
 			// General admin functions.
-//			require_once( $this->dir . 'admin/functions-admin.php' );
+			require_once( $this->dir . 'admin/function-admin.php' );
 			// Plugin settings.
 //			require_once( $this->dir . 'admin/class-settings.php' );
+			// CRUD on gardener and allotment
+			require_once( $this->dir . 'admin/gardeners-list.php');
+			require_once( $this->dir . 'admin/gardener-create.php');
+			require_once( $this->dir . 'admin/gardener-update.php');
+//			require_once( $this->dir . 'admin/allotments-list.php');
+//			require_once( $this->dir . 'admin/allotment-create.php');
+//			require_once( $this->dir . 'admin/allotment-update.php');
+			
 		}
 	}
 	
@@ -132,8 +132,14 @@ final class WsaAllotment_Plugin {
 	private function setup_actions() {
 		// Internationalize the text strings used.
 		add_action( 'plugins_loaded', array( $this, 'i18n' ), 2 );
+		// Add dbcheck.
+		add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
+		// CRUD actions in admin-menu
+		add_action('admin_menu','wsaallotment_gardeners_modifymenu');
+//		add_action('admin_menu','wsaallotment_allotments_modifymenu');
 		// Register activation hook.
 		register_activation_hook( __FILE__, array( $this, 'activation' ) );
+		// uninstall via uninstall.php
 	}
 	/**
 	 * Loads the translation files.
@@ -178,7 +184,9 @@ final class WsaAllotment_Plugin {
 	public function __clone() {
 		_doing_it_wrong( __FUNCTION__, esc_html__( 'Whoah, partner!', 'wsaallotment' ), '1.0.0' );
 	}
-	/**
+	/**# Add dbcheck.
+add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
+
 	 * Magic method to keep the object from being unserialized.
 	 *
 	 * @since  0.1.0
@@ -191,7 +199,9 @@ final class WsaAllotment_Plugin {
 	
 }
 	
-/**
+/**# Add dbcheck.
+add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
+
  * Gets the instance of the `WsaAllotment_Plugin` class.  This function is useful for quickly grabbing data
  * used throughout the plugin.
  *
