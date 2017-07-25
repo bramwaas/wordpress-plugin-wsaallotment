@@ -71,7 +71,7 @@ function wsaallotment_gardener_update() {
 
         <?php } else { ?>
             <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
-                <table class='wp-list-table widefat fixed'>
+                <table class="table wp-list-table widefat fixed">
                 <tr>
                     <th class="ss-th-width">Login</th>
                     <td><input type="text" name="user_login" value="<?php echo $row['user_login']; ?>" class="ss-field-width" /></td>
@@ -81,27 +81,27 @@ function wsaallotment_gardener_update() {
                     <td><input type="text" name="gardener_email" value="<?php echo $row['gardener_email']; ?>" class="ss-field-width" /></td>
                 </tr>
                 <tr>
-                    <th class="ss-th-width">Initials</th>
+                    <th scope="row" class="ss-th-width">Initials</th>
                     <td><input type="text" name="gardener_initials" value="<?php echo $row['gardener_initials']; ?>" class="ss-field-width" /></td>
                 </tr>
                 <tr>
-                    <th class="ss-th-width">Infix</th>
+                    <th scope="row" class="ss-th-width">Infix</th>
                     <td><input type="text" name="gardener_infix" value="<?php echo $row['gardener_infix']; ?>" class="ss-field-width" /></td>
                 </tr>
                 <tr>
-                    <th class="ss-th-width">LastName</th>
+                    <th scope="row" class="ss-th-width">LastName</th>
                     <td><input type="text" name="gardener_last_name" value="<?php echo $row['gardener_last_name']; ?>" class="ss-field-width" /></td>
                 </tr>
                 <tr>
-                    <th class="ss-th-width">FirstName</th>
+                    <th scope="row" class="ss-th-width">FirstName</th>
                     <td><input type="text" name="gardener_first_name" value="<?php echo $row['gardener_first_name']; ?>" class="ss-field-width" /></td>
                 </tr>
                 <tr>
-                    <th class="ss-th-width">Section</th>
+                    <th scope="row" class="ss-th-width">Section</th>
                     <td><input type="text" name="allotment_section" value="<?php echo $row['allotment_section']; ?>" class="ss-field-width" /></td>
                 </tr>
                 <tr>
-                    <th class="ss-th-width">Nr</th>
+                    <th scope="row" class="ss-th-width">Nr</th>
                     <td><input type="text" name="allotment_nr" value="<?php echo $row['allotment_nr']; ?>" class="ss-field-width" /></td>
                 </tr>
                 </table>
