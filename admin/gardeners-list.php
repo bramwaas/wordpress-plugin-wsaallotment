@@ -33,6 +33,7 @@ function wsaallotment_gardeners_list() {
         $rows = $wpdb->get_results("SELECT gardener_id,user_login,gardener_email,gardener_initials,gardener_infix,gardener_last_name,gardener_first_name,allotment_section,allotment_nr from $table_name");
          ?>
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
+            <thead>
             <tr>
                 <th class="manage-column ss-list-width">ID</th>
                 <th class="manage-column ss-list-width">Login</th>
@@ -45,6 +46,8 @@ function wsaallotment_gardeners_list() {
                 <th class="manage-column ss-list-width">Nr</th>
                 <th>&nbsp;</th>
             </tr>
+            </thead>
+            <tbody>
             <?php foreach ($rows as $row) { ?>
                 <tr>
                     <th scope="row" class="manage-column ss-list-width"><?php echo $row->gardener_id; ?></td>
@@ -59,6 +62,7 @@ function wsaallotment_gardeners_list() {
                     <td><a href="<?php echo admin_url('admin.php?page=wsaallotment_gardener_update&gardener_id=' . $row->gardener_id); ?>">Update</a></td>
                 </tr>
             <?php } ?>
+            </tbody>
         </table>
     </div>
     <?php
