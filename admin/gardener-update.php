@@ -22,14 +22,14 @@ function wsaallotment_gardener_update() {
     $table_name = $wpdb->prefix . "gardener";
     $gardener_id= $_GET["gardener_id"];
     if (isset($_POST['update'])) {
-     	$user_login= $_POST["user_login"];
-    	$gardener_email= $_POST["gardener_email"];
+    	$user_login= (($_POST["user_login"])> ' ') ? $_POST["user_login"] : null;
+    	$gardener_email= (($_POST["gardener_email"])> ' ') ? $_POST["gardener_email"] : null;
     	$gardener_initials= $_POST["gardener_initials"];
     	$gardener_infix= $_POST["gardener_infix"];
-    	$gardener_last_name= $_POST["gardener_last_name"];
-    	$gardener_first_name= $_POST["gardener_first_name"];
-    	$allotment_section= $_POST["allotment_section"];
-    	$allotment_nr= $_POST["allotment_nr"];
+    	$gardener_last_name=  ($_POST["gardener_last_name"]> ' ') ? $_POST["gardener_last_name"] : null;
+    	$gardener_first_name=  $_POST["gardener_first_name"];
+    	$allotment_section= (($_POST["allotment_section"])> ' ') ? $_POST["allotment_section"] : null;
+    	$allotment_nr= (($_POST["allotment_nr"])> ' ') ? $_POST["allotment_nr"] : null;
     	$wpdb->update(
                 $table_name, //table
         		array(

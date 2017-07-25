@@ -30,18 +30,17 @@ function wsaallotment_gardeners_list() {
         <?php
         global $wpdb;
         $table_name = $wpdb->prefix . "gardener";
-        $rows = $wpdb->get_results("SELECT gardener_id,user_login,gardener_email,gardener_initials,gardener_infix,gardener_last_name,gardener_first_name,allotment_section,allotment_nr from $table_name");
+        $rows = $wpdb->get_results("SELECT user_login,gardener_email,gardener_initials,gardener_infix,gardener_last_name,gardener_first_name,allotment_section,allotment_nr,gardener_id from $table_name");
          ?>
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
             <thead>
             <tr>
-                <th class="manage-column ss-list-width">ID</th>
                 <th class="manage-column ss-list-width">Login</th>
                 <th class="manage-column ss-list-width">Email</th>
                 <th class="manage-column ss-list-width">Initials</th>
                 <th class="manage-column ss-list-width">Infix</th>
-                <th class="manage-column ss-list-width">LastName</th>
-                <th class="manage-column ss-list-width">FirstName</th>
+                <th class="manage-column ss-list-width">Last name</th>
+                <th class="manage-column ss-list-width">First name</th>
                 <th class="manage-column ss-list-width">Section</th>
                 <th class="manage-column ss-list-width">Nr</th>
                 <th>&nbsp;</th>
@@ -50,7 +49,6 @@ function wsaallotment_gardeners_list() {
             <tbody>
             <?php foreach ($rows as $row) { ?>
                 <tr>
-                    <th scope="row" class="manage-column ss-list-width"><?php echo $row->gardener_id; ?></td>
                     <td class="manage-column ss-list-width"><?php echo $row->user_login; ?></td>
                     <td class="manage-column ss-list-width"><?php echo $row->gardener_email; ?></td>
                     <td class="manage-column ss-list-width"><?php echo $row->gardener_initials; ?></td>
