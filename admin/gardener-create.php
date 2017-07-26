@@ -32,26 +32,33 @@ function wsaallotment_gardener_create() {
 	//insert
 	global $wpdb;
 	$table_name = $wpdb->prefix . "gardener";
+	$fields = array(
+			'user_login' => null,
+			'gardener_email' => null,
+			'gardener_initials' => null,
+			'gardener_infix' => null,
+			'gardener_last_name' => null,
+			'gardener_first_name' => null,
+			'allotment_section' => null,
+			'allotment_nr' => null); //data
+	$labels = array('gardener_id' => __('Id' , 'wsaallotment'),
+			'user_login' => __('Login' , 'wsaallotment'),
+			'gardener_email' => __('Email' , 'wsaallotment'),
+			'gardener_initials' => __('Initials' , 'wsaallotment'),
+			'gardener_infix' => __('Infix' , 'wsaallotment'),
+			'gardener_last_name' => __('Last name' , 'wsaallotment'),
+			'gardener_first_name' => __('First name' , 'wsaallotment'),
+			'allotment_section' => __('Section' , 'wsaallotment'),
+			'allotment_nr' => __('Nr' , 'wsaallotment')); 
+	
+	
 	if (isset($_POST['insert'])) {
-		$user_login= (($_POST["user_login"])> ' ') ? $_POST["user_login"] : null;
-		$gardener_email= (($_POST["gardener_email"])> ' ') ? $_POST["gardener_email"] : null;
-		$gardener_initials= $_POST["gardener_initials"];
-		$gardener_infix= $_POST["gardener_infix"];
-		$gardener_last_name=  ($_POST["gardener_last_name"]> ' ') ? $_POST["gardener_last_name"] : null;
-		$gardener_first_name=  $_POST["gardener_first_name"];
-		$allotment_section= (($_POST["allotment_section"])> ' ') ? $_POST["allotment_section"] : null;
-		$allotment_nr= (($_POST["allotment_nr"])> ' ') ? $_POST["allotment_nr"] : null;
+		foreach($_POST as $field => $value) {
+			$fields[$field] = ($value > ' ') ? $value : null;
+		}
         $wpdb->insert(
                 $table_name, //table
-        		array(
-        				'user_login' => $user_login,
-        				'gardener_email' => $gardener_email,
-        				'gardener_initials' => $gardener_initials,
-        				'gardener_infix' => $gardener_infix,
-        				'gardener_last_name' => $gardener_last_name,
-        				'gardener_first_name' => $gardener_first_name,
-        				'allotment_section' => $allotment_section,
-        				'allotment_nr' => $allotment_nr), //data
+        		$fields, //data
         		array('%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d') //data format			
         );
         if (! isset($message)) { $message="gardener inserted ";}
@@ -63,38 +70,16 @@ function wsaallotment_gardener_create() {
         <?php if (isset($message)): ?><div class="updated"><p><?php echo $message; ?></p></div><?php endif; ?>
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
              <table class="table wp-list-table widefat fixed">
-                <tr>
-                    <th scope="row" class="ss-th-width">Login</th>
-                    <td><input type="text" name="user_login" value="" class="ss-field-width" /></td>
+        	<?php
+        	foreach($fields as $field => $value) { ?>
+               <tr>
+                    <th scope="row" class="ss-th-width"><?php echo $labels[$field]; ?></th>
+                    <td><input type="text" name="<?php echo $field; ?>" value="<?php echo $value; ?>" class="ss-field-width" /></td>
                 </tr>
-                <tr>
-                    <th scope="row" class="ss-th-width">Email</th>
-                    <td><input type="text" name="gardener_email" value="" class="ss-field-width" /></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="ss-th-width">Initials</th>
-                    <td><input type="text" name="gardener_initials" value="" class="ss-field-width" /></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="ss-th-width">Infix</th>
-                    <td><input type="text" name="gardener_infix" value="" class="ss-field-width" /></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="ss-th-width">Last name</th>
-                    <td><input type="text" name="gardener_last_name" value="" class="ss-field-width" /></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="ss-th-width">First name</th>
-                    <td><input type="text" name="gardener_first_name" value="" class="ss-field-width" /></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="ss-th-width">Section</th>
-                    <td><input type="text" name="allotment_section" value="" class="ss-field-width" /></td>
-                </tr>
-                <tr>
-                    <th scope="row" class="ss-th-width">Nr</th>
-                    <td><input type="text" name="allotment_nr" value="" class="ss-field-width" /></td>
-                </tr>
+        		
+        	<?php	
+        	}
+        	?>
             </table>
             <input type='submit' name="insert" value='Save' class='button'>
         </form>
