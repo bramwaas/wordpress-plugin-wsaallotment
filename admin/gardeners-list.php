@@ -30,7 +30,17 @@ function wsaallotment_gardeners_list() {
         <?php
         global $wpdb;
         $table_name = $wpdb->prefix . "gardener";
-        $rows = $wpdb->get_results("SELECT user_login,gardener_email,gardener_initials,gardener_infix,gardener_last_name,gardener_first_name,allotment_section,allotment_nr,gardener_id from $table_name");
+    	$fields = array(
+			'user_login' => null,
+			'gardener_email' => null,
+			'gardener_initials' => null,
+			'gardener_infix' => null,
+			'gardener_last_name' => null,
+			'gardener_first_name' => null,
+			'allotment_section' => null,
+			'allotment_nr' => null); //data
+        $select_list = implode(", ", array_keys($fields))) . ', gardener_id ';
+        $rows = $wpdb->get_results("SELECT $select_list from $table_name");
          ?>
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
             <thead>
@@ -47,16 +57,16 @@ function wsaallotment_gardeners_list() {
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($rows as $row) { ?>
+            <?php foreach ($rows as $fields) { ?>
                 <tr>
-                    <td class="manage-column ss-list-width"><?php echo $row->user_login; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->gardener_email; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->gardener_initials; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->gardener_infix; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->gardener_last_name; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->gardener_first_name; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->allotment_section; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $row->allotment_nr; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $fields->user_login; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_email; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_initials; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_infix; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_last_name; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_first_name; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $fields->allotment_section; ?></td>
+                    <td class="manage-column ss-list-width"><?php echo $fields->allotment_nr; ?></td>
                     <td><a href="<?php echo admin_url('admin.php?page=wsaallotment_gardener_update&gardener_id=' . $row->gardener_id); ?>">Update</a></td>
                 </tr>
             <?php } ?>
