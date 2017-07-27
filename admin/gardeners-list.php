@@ -59,15 +59,12 @@ function wsaallotment_gardeners_list() {
             <tbody>
             <?php foreach ($rows as $fields) { ?>
                 <tr>
-                    <td class="manage-column ss-list-width"><?php echo $fields->user_login; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_email; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_initials; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_infix; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_last_name; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $fields->gardener_first_name; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $fields->allotment_section; ?></td>
-                    <td class="manage-column ss-list-width"><?php echo $fields->allotment_nr; ?></td>
+		<?php foreach ($fields as $field => $value) { ?>
+ 		        <?php if (! $value == 'gardener_id'){ ?>
+                       <td class="manage-column ss-list-width"><?php echo $value; ?></td>
+	              <?php } else { ?>
                     <td><a href="<?php echo admin_url('admin.php?page=wsaallotment_gardener_update&gardener_id=' . $row->gardener_id); ?>">Update</a></td>
+		        <?php } ?>		
                 </tr>
             <?php } ?>
             </tbody>
