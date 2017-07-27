@@ -54,7 +54,8 @@ function wsaallotment_gardener_create() {
 	
 	if (isset($_POST['insert'])) {
 		foreach($_POST as $field => $value) {
-			$fields[$field] = ($value > ' ') ? $value : null;
+			if ($field=='insert') {}
+			else {$fields[$field] = ($value > ' ') ? $value : null;}
 		}
         $wpdb->insert(
                 $table_name, //table

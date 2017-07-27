@@ -39,7 +39,7 @@ function wsaallotment_gardeners_list() {
 			'gardener_first_name' => null,
 			'allotment_section' => null,
 			'allotment_nr' => null); //data
-        $select_list = implode(", ", array_keys($fields))) . ', gardener_id ';
+        $select_list = implode(", ", array_keys($fields)) . ', gardener_id ';
         $rows = $wpdb->get_results("SELECT $select_list from $table_name");
          ?>
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
@@ -60,11 +60,12 @@ function wsaallotment_gardeners_list() {
             <?php foreach ($rows as $fields) { ?>
                 <tr>
 		<?php foreach ($fields as $field => $value) { ?>
- 		        <?php if (! $value == 'gardener_id'){ ?>
-                       <td class="manage-column ss-list-width"><?php echo $value; ?></td>
+ 		        <?php if ($field == 'gardener_id'){ ?>
+                    <td><a href="<?php echo admin_url('admin.php?page=wsaallotment_gardener_update&gardener_id=' . $value); ?>">Update</a></td>
 	              <?php } else { ?>
-                    <td><a href="<?php echo admin_url('admin.php?page=wsaallotment_gardener_update&gardener_id=' . $row->gardener_id); ?>">Update</a></td>
-		        <?php } ?>		
+                    <td class="manage-column ss-list-width"><?php echo $value; ?></td>
+ 		        <?php } 
+         			} ?>		
                 </tr>
             <?php } ?>
             </tbody>
