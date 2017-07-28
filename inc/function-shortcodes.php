@@ -128,13 +128,31 @@ function view_gardener_shortcode($attr, $content = null) {
 	$content = 'Geen user gevonden';
         $current_user = wp_get_current_user(); 
         if ( ( $current_user instanceof WP_User ) ) {
-        	$content = __('Voorlopig alleen email van tuinier: ', 'wsaallotment') . 
-        	  esc_html( $current_user->user_email . '<br>'. $current_user->user_login 
-        	  		. '<br> wsaallotment_db_version:' . get_site_option( 'wsaallotment_db_version'));
+        	$row = wsaallotment_get_gardener_row ($current_user->user_login);
+		$content = wsaallotment_view_gardener ($row) ;
 	}
  	return $content;
 }
-
+/**
+ * Displays a gardener row in a table.
+ *
+ * @since  0.1.0
+ * @access public
+ * @return string
+ */
+function wsaallotment_view_gardener ($row = null) {
+   $content = '<table class="table wp-list-table widefat fixed">';
+   	foreach($row as $field => $value) { 
+               $content .= '<tr>
+                    <th scope="row" class="ss-th-width">' . $labels[$field]; . '</th>
+                    <td  class="ss-field-width">' . $value . '</td>
+                </tr>
+		';
+        	}
+            $content .= '</table>';
+	    return $content;
+}
+	
 /**
  * Displays a view allotment form.
  *
