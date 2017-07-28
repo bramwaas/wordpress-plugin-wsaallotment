@@ -59,13 +59,17 @@ function wsaallotment_gardeners_list() {
             <tbody>
             <?php foreach ($rows as $fields) { ?>
                 <tr>
-		<?php foreach ($fields as $field => $value) { ?>
- 		        <?php if ($field == 'gardener_id'){ ?>
-                    <td><a href="<?php echo admin_url('admin.php?page=wsaallotment_gardener_update&gardener_id=' . $value); ?>">Update</a></td>
-	              <?php } else { ?>
+		<?php foreach ($fields as $field => $value) { 
+		 	if ($field !== 'gardener_id'){ 
+				if ($field === 'gardener_last_name'){ ?>
+                    	<td class="manage-column ss-list-width"><a 
+				href="<?php echo admin_url('admin.php?page=wsaallotment_gardener_update&gardener_id=' . $fields['gardener_id']);
+				?>"><?php echo $fields['gardener_last_name'];?></a></td>
+	              <?php } 	else { ?>
                     <td class="manage-column ss-list-width"><?php echo $value; ?></td>
- 		        <?php } 
-         			} ?>		
+ 		        <?php 	} 
+			  }
+         		} ?>		
                 </tr>
             <?php } ?>
             </tbody>
