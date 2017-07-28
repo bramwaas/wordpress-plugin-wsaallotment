@@ -30,30 +30,17 @@ function wsaallotment_gardeners_list() {
         <?php
         global $wpdb;
         $table_name = $wpdb->prefix . "gardener";
-    	$fields = array(
-			'user_login' => null,
-			'gardener_email' => null,
-			'gardener_initials' => null,
-			'gardener_infix' => null,
-			'gardener_last_name' => null,
-			'gardener_first_name' => null,
-			'allotment_section' => null,
-			'allotment_nr' => null); //data
+    	$fields = wsaallotment_gardener_fields ();
+	$labels = wsaallotment_gardener_labels ();
         $select_list = implode(", ", array_keys($fields)) . ', gardener_id ';
         $rows = $wpdb->get_results("SELECT $select_list from $table_name");
          ?>
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
             <thead>
             <tr>
-                <th class="manage-column ss-list-width">Login</th>
-                <th class="manage-column ss-list-width">Email</th>
-                <th class="manage-column ss-list-width">Initials</th>
-                <th class="manage-column ss-list-width">Infix</th>
-                <th class="manage-column ss-list-width">Last name</th>
-                <th class="manage-column ss-list-width">First name</th>
-                <th class="manage-column ss-list-width">Section</th>
-                <th class="manage-column ss-list-width">Nr</th>
-                <th>&nbsp;</th>
+	    <?php foreach ($fields as $field => $value) { ?>	    
+                <th class="manage-column ss-list-width"><?php echo $labels[$field]; ?></th>
+		<?php 	}  ?>    
             </tr>
             </thead>
             <tbody>
