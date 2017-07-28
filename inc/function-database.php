@@ -88,7 +88,7 @@ function wsaallotment_update_db_check() {
 	}
 }
 /**
- * Give the fields for table gardener without the id . 
+ * Give the fields for table gardener without the id with empty value. 
  * 
  *
  * @since  0.1.0
@@ -106,6 +106,14 @@ function wsaallotment_gardener_fields () {
 			'allotment_section' => null,
 			'allotment_nr' => null); 
 }
+/**
+ * Give the fields for table gardener with transaltable labelname . 
+ * 
+ *
+ * @since  0.1.0
+ * @access public
+ * @return array A
+ */
 function wsaallotment_gardener_labels () {
 		return array('gardener_id' => __('Id' , 'wsaallotment'),
 			'user_login' => __('Login' , 'wsaallotment'),
@@ -117,4 +125,20 @@ function wsaallotment_gardener_labels () {
 			'allotment_section' => __('Section' , 'wsaallotment'),
 			'allotment_nr' => __('Nr' , 'wsaallotment')); 
 	
+}
+/**
+ * Single gardener row on user_login
+ *
+ * @since  0.1.0
+ * @access public
+ * @return array
+ */
+function wsaallotment_get_gardener_row ($user_login) {
+	global $wpdb;
+	$table_name = $wpdb->prefix . "gardener";
+    	$fields = wsaallotment_gardener_fields ();
+	$labels = wsaallotment_gardener_labels ();
+        $select_list = implode(", ", array_keys($fields)) ;
+ 	$sql = $wpdb->prepare("SELECT $select_list from $table_name WHERE user_login=%s", $user_login);
+    	return $wpdb->get_row($sql, ARRAY_A); ?>
 }
