@@ -105,5 +105,16 @@ function wsaallotment_gardener_fields () {
 			'gardener_first_name' => null,
 			'allotment_section' => null,
 			'allotment_nr' => null); 
-
+}
+function wsaallotment_gardener_labels () {
+		return array('gardener_id' => __('Id' , 'wsaallotment'),
+			'user_login' => __('Login' , 'wsaallotment'),
+			'gardener_email' => __('Email' , 'wsaallotment'),
+			'gardener_initials' => __('Initials' , 'wsaallotment'),
+			'gardener_infix' => __('Infix' , 'wsaallotment'),
+			'gardener_last_name' => __('Last name' , 'wsaallotment'),
+			'gardener_first_name' => __('First name' , 'wsaallotment'),
+			'allotment_section' => __('Section' , 'wsaallotment'),
+			'allotment_nr' => __('Nr' , 'wsaallotment')); 
+	
 }
