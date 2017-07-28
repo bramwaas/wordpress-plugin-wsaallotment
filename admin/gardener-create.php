@@ -32,26 +32,8 @@ function wsaallotment_gardener_create() {
 	//insert
 	global $wpdb;
 	$table_name = $wpdb->prefix . "gardener";
-	$fields = array(
-			'user_login' => null,
-			'gardener_email' => null,
-			'gardener_initials' => null,
-			'gardener_infix' => null,
-			'gardener_last_name' => null,
-			'gardener_first_name' => null,
-			'allotment_section' => null,
-			'allotment_nr' => null); //data
-	$labels = array('gardener_id' => __('Id' , 'wsaallotment'),
-			'user_login' => __('Login' , 'wsaallotment'),
-			'gardener_email' => __('Email' , 'wsaallotment'),
-			'gardener_initials' => __('Initials' , 'wsaallotment'),
-			'gardener_infix' => __('Infix' , 'wsaallotment'),
-			'gardener_last_name' => __('Last name' , 'wsaallotment'),
-			'gardener_first_name' => __('First name' , 'wsaallotment'),
-			'allotment_section' => __('Section' , 'wsaallotment'),
-			'allotment_nr' => __('Nr' , 'wsaallotment')); 
-	
-	
+	$fields = wsaallotment_gardener_fields ();
+	$labels = wsaallotment_gardener_labels (); 
 	if (isset($_POST['insert'])) {
 		foreach($_POST as $field => $value) {
 			if ($field=='insert') {}
