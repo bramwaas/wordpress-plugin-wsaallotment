@@ -87,3 +87,23 @@ function wsaallotment_update_db_check() {
 		wsaallotment_install_db();
 	}
 }
+/**
+ * Give the fields for table gardener without the id . 
+ * 
+ *
+ * @since  0.1.0
+ * @access public
+ * @return array A
+ */
+function wsaallotment_gardener_fields () {
+    	return array(
+			'user_login' => null,
+			'gardener_email' => null,
+			'gardener_initials' => null,
+			'gardener_infix' => null,
+			'gardener_last_name' => null,
+			'gardener_first_name' => null,
+			'allotment_section' => null,
+			'allotment_nr' => null); 
+
+}
