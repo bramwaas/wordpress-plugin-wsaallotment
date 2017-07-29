@@ -41,16 +41,18 @@ function wsaallotment_gardener_create() {
 		}
         $wpdb->insert(
                 $table_name, //table
-        		$fields, //data
-        		array('%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d') //data format			
+        		$fields //data
+        		/* array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d') //data format	*/		
         );
-        if (! isset($message)) { $message="gardener inserted ";}
+        if (! isset($message)) { $message= __('Gardener inserted', 'wsaallotment');}
     }
     ?>
     <link type="text/css" href="<?php echo plugin_dir_url(  __FILE__ ). '../css/style-admin.css' ?>" rel="stylesheet" />
     <div class="wrap">
-        <h2>Add New gardener</h2>
-        <?php if (isset($message)): ?><div class="updated"><p><?php echo $message; ?></p></div><?php endif; ?>
+        <h2><?php _e('Add new gardener', 'wsaallotment'); ?></h2>
+        <?php if (isset($message)): ?><div class="updated"><p><?php echo $message; ?></p></div>
+                  <a href="<?php echo admin_url('admin.php?page=wsaallotment_gardeners_list') ?>">&laquo; <?php _e('Back to the gardeners list', 'wsaallotment'); ?></a>
+        <?php endif; ?>
         <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
              <table class="table wp-list-table widefat fixed">
         	<?php
@@ -64,7 +66,7 @@ function wsaallotment_gardener_create() {
         	}
         	?>
             </table>
-            <input type='submit' name="insert" value='Save' class='button'>
+            <input type='submit' name="insert" value='Save' title="<?php _e('Save gardener', 'wsaallotment'); ?>" class='button'>
         </form>
     </div>
     <?php

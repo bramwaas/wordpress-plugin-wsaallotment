@@ -140,5 +140,5 @@ function wsaallotment_get_gardener_row ($user_login) {
 	$labels = wsaallotment_gardener_labels ();
         $select_list = implode(", ", array_keys($fields)) ;
  	$sql = $wpdb->prepare("SELECT $select_list from $table_name WHERE user_login=%s", $user_login);
-    	return $wpdb->get_row($sql, ARRAY_A); ?>
+    	return $wpdb->get_row($sql, ARRAY_A); 
 }

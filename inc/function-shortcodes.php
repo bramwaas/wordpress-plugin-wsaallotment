@@ -141,15 +141,18 @@ function view_gardener_shortcode($attr, $content = null) {
  * @return string
  */
 function wsaallotment_view_gardener ($row = null) {
-   $content = '<table class="table wp-list-table widefat fixed">';
+	$labels = wsaallotment_gardener_labels ();	
+   	$content = '
+<table class="table wp-list-table widefat fixed">';
    	foreach($row as $field => $value) { 
-               $content .= '<tr>
-                    <th scope="row" class="ss-th-width">' . $labels[$field]; . '</th>
-                    <td  class="ss-field-width">' . $value . '</td>
-                </tr>
-		';
+               $content .= '
+		<tr>
+			<th scope="row" class="ss-th-width">' . $labels[$field] . '</th>
+			<td  class="ss-field-width">' . $value . '</td>
+		</tr>';
         	}
-            $content .= '</table>';
+            $content .= '
+</table>';
 	    return $content;
 }
 	

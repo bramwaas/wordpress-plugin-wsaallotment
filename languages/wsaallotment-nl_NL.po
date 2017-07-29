@@ -1,141 +1,142 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Wsa Allotment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-07-29 10:46+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"PO-Revision-Date: 2017-07-29 10:55+0000\n"
+"Last-Translator: Bram Waasdorp <bramwaas@waasdorpsoekhan.nl>\n"
+"Language-Team: Dutch\n"
+"Language: nl-NL\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Loco - https://localise.biz/"
 
 #: wsaallotment.php:185 wsaallotment.php:197
 msgid "Whoah, partner!"
-msgstr ""
+msgstr "Whoah, partner!"
 
 #: inc/function-database.php:118
 msgid "Id"
-msgstr ""
+msgstr "Id"
 
 #: inc/function-database.php:119
 msgid "Login"
-msgstr ""
+msgstr "Inlognaam"
 
 #: inc/function-database.php:120
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: inc/function-database.php:121
 msgid "Initials"
-msgstr ""
+msgstr "Voorletters"
 
 #: inc/function-database.php:122
 msgid "Infix"
-msgstr ""
+msgstr "Tussenvoegsel"
 
 #: inc/function-database.php:123
 msgid "Last name"
-msgstr ""
+msgstr "Achternaam"
 
 #: inc/function-database.php:124
 msgid "First name"
-msgstr ""
+msgstr "Voornaam"
 
 #: inc/function-database.php:125
 msgid "Section"
-msgstr ""
+msgstr "Vak"
 
 #: inc/function-database.php:126
 msgid "Nr"
-msgstr ""
+msgstr "Nr"
 
 #: inc/function-shortcodes.php:170
 msgid "Voorlopig alleen email van tuintje: "
-msgstr ""
+msgstr "Voorlopig alleen email van tuintje: "
 
 #: admin/gardener-update.php:40
 msgid "Gardener updated"
-msgstr ""
+msgstr "Tuinder aangepast"
 
 #: admin/gardener-update.php:47
 msgid "Gardener deleted"
-msgstr ""
+msgstr "Tuinder verwijderd"
 
 #: admin/gardener-update.php:55 admin/gardener-update.php:56
 msgid "Id missing"
-msgstr ""
+msgstr "Id ontbreekt"
 
 #: admin/gardener-update.php:62
 msgid "Gardener"
-msgstr ""
+msgstr "Tuinder"
 
 #: admin/gardener-update.php:64 admin/gardener-create.php:54
 msgid "Back to the gardeners list"
-msgstr ""
+msgstr "Terug naar de tuinders lijst"
 
 #: admin/gardener-update.php:81
 msgid "Save"
-msgstr ""
+msgstr "Opslaan"
 
 #: admin/gardener-update.php:81 admin/gardeners-list.php:54
 msgid "Update gardener"
-msgstr ""
+msgstr "Pas tuinder aan"
 
 #: admin/gardener-update.php:82
 msgid "Delete"
-msgstr ""
+msgstr "Verwijder"
 
 #: admin/gardener-update.php:82
 msgid "Delete gardener"
-msgstr ""
+msgstr "Verwijder tuinder"
 
 #: admin/gardener-update.php:82
 msgid "Delete this gardener?"
-msgstr ""
+msgstr "Verwijder deze tuinder"
 
 #: admin/gardener-create.php:47
 msgid "Gardener inserted"
-msgstr ""
+msgstr "Tuinder toegevoegd"
 
 #: admin/gardener-create.php:52 admin/gardeners-list.php:26
 msgid "Add new gardener"
-msgstr ""
+msgstr "Voeg een tuinder toe"
 
 #: admin/gardener-create.php:69
 msgid "Save gardener"
-msgstr ""
+msgstr "Sla tuinder op"
 
 #: admin/gardeners-list.php:23
 msgid "Gardeners"
-msgstr ""
+msgstr "Tuinders"
 
 #: admin/gardeners-list.php:26
 msgid "Add new"
-msgstr ""
+msgstr "Nieuw aanmaken"
 
 #. Name of the plugin
 msgid "Wsa Allotment"
-msgstr ""
+msgstr "Wsa Volkstuin"
 
 #. Description of the plugin
 msgid ""
 "Wordpress plugin for management of allotment entities. Designed for "
 "Volkstuinvereniging Linnaeus."
 msgstr ""
+"Wordpress plugin voor het beheer van volkstuin entiteiten. Ontwikkeld voor "
+"Volkstuinvereniging Linnaeus."
 
 #. URI of the plugin
 msgid "https://github.com/bramwaas/wordpress-plugin-wsaallotment"
-msgstr ""
+msgstr "https://github.com/bramwaas/wordpress-plugin-wsaallotment"
 
 #. Author of the plugin
 msgid "Bram Waasdorp"
-msgstr ""
+msgstr "Bram Waasdorp"
 
 #. Author URI of the plugin
 msgid "https://www.waasdorpsoekhan.nl/"
-msgstr ""
+msgstr "http://www.waasdorpsoekhan.nl/"

@@ -20,8 +20,8 @@
 function wsaallotment_gardeners_modifymenu() {
 	
 	//this is the main item for the menu
-	add_menu_page('Gardeners', //page title
-			'Gardeners', //menu title
+	add_menu_page(__('Gardeners', 'wsaallotment'), //page title
+ 			__('Gardeners', 'wsaallotment'), //menu title
 			'manage_options', //capabilities
 			'wsaallotment_gardeners_list', //menu slug
 			'wsaallotment_gardeners_list' //function
@@ -29,16 +29,16 @@ function wsaallotment_gardeners_modifymenu() {
 	
 	//this is a submenu
 	add_submenu_page('wsaallotment_gardeners_list', //parent slug
-			'Add New gardener', //page title
-			'Add New', //menu title
+			__('Add new gardener', 'wsaallotment'), //page title 
+			__('Add new', 'wsaallotment'), //menu title
 			'manage_options', //capability
 			'wsaallotment_gardener_create', //menu slug
 			'wsaallotment_gardener_create'); //function
 	
 	//this submenu is HIDDEN, however, we need to add it anyways
 	add_submenu_page(null, //parent slug
-			'Update gardener', //page title
-			'Update', //menu title
+			__('Update gardener', 'wsaallotment'), //page title
+			__('Update', 'wsaallotment'), //menu title
 			'manage_options', //capability
 			'wsaallotment_gardener_update', //menu slug
 			'wsaallotment_gardener_update'); //function
