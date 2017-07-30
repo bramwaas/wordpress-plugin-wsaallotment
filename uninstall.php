@@ -13,15 +13,17 @@
 if (!defined('WP_UNINSTALL_PLUGIN')) {
     die;
 }
+// remove roles and capabillities added by this plugin.
+wsaallotment_memberadministration_role_remove();
+
+// drop custom database tables created by this plugin
 global $wpdb;
 $table_name_gardener  = $wpdb->prefix . "gardener";
 $table_name_allotment = $wpdb->prefix . "allotment";
- 
-$option_name = 'wsaallotment_db_version';
- 
-delete_option($option_name);
-
-// drop custom database tables
 
 $wpdb->query("DROP TABLE IF EXISTS $table_name_gardener");
 $wpdb->query("DROP TABLE IF EXISTS $table_name_allotment");
+//remove options added by this plugin 
+$option_name = 'wsaallotment_db_version';
+ 
+delete_option($option_name);
