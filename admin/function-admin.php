@@ -10,6 +10,25 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 /**
+ * Roles for this plugin
+ *
+ * @since  0.1.0
+ * @access public
+ * @return void
+ */
+function wsaallotment_memberadministration_role()
+{
+    add_role(
+        'wsaallotment_memberadministration',
+        __('Member Administration','wsaallotment'),
+        [
+            'read'         => true,
+            'member_administration'   => true,
+        ]
+    );
+}
+
+/**
  * Crud menu on gardener
  *
  * @since  0.1.0
