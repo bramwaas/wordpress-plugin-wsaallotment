@@ -17,6 +17,8 @@
  * @return void
  */
 function wsaallotment_gardener_update() {
+    if (current_user_can('member_administration'   )) {
+
     global $wpdb;
     //update
     $table_name = $wpdb->prefix . "gardener";
@@ -86,3 +88,8 @@ function wsaallotment_gardener_update() {
     </div>
     <?php
 }
+}
+else {echo '<div class="wrap">';
+    _e('User is not authorised for this function','wsaallotment');
+     echo '</div>';}
+    
