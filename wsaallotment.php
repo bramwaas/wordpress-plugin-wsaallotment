@@ -132,6 +132,8 @@ final class WsaAllotment_Plugin {
 	private function setup_actions() {
 		// Internationalize the text strings used.
 		add_action( 'plugins_loaded', array( $this, 'i18n' ), 2 );
+		// add the wsaallotment_memberadministration_role
+		add_action('init', 'wsaallotment_memberadministration_role');		
 		// Add dbcheck.
 		add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
 		// CRUD actions in admin-menu
