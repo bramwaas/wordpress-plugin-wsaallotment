@@ -88,8 +88,7 @@ function wsaallotment_gardener_update() {
     </div>
     <?php
 }
-}
 else {echo '<div class="wrap">';
     _e('User is not authorised for this function','wsaallotment');
      echo '</div>';}
-    
+}   

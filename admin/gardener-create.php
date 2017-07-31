@@ -16,19 +16,10 @@
  * @access public
  * @return void
  */
-/*
- * 	gardener_id mediumint(9) NOT NULL AUTO_INCREMENT,
-    user_login varchar(60),
-	gardener_email varchar(100),
-    gardener_initials varchar(10),
-    gardener_infix varchar(20),
-    gardener_last_name varchar(100) NOT NULL,
-    gardener_first_name varchar(60),
-	allotment_section varchar(1),
-	allotment_nr tinyint(3),
 
- */
 function wsaallotment_gardener_create() {
+	if (current_user_can('member_administration'   )) {
+		
 	//insert
 	global $wpdb;
 	$table_name = $wpdb->prefix . "gardener";
@@ -71,3 +62,7 @@ function wsaallotment_gardener_create() {
     </div>
     <?php
 }
+else {echo '<div class="wrap">';
+_e('User is not authorised for this function','wsaallotment');
+echo '</div>';}
+} 

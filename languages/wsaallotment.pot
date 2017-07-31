@@ -3,18 +3,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-29 10:46+0000\n"
+"POT-Creation-Date: 2017-07-31 08:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
 "Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Loco - https://localise.biz/"
 
-#: wsaallotment.php:185 wsaallotment.php:197
+#: wsaallotment.php:160
+msgid "Member Administration"
+msgstr ""
+
+#: wsaallotment.php:221 wsaallotment.php:231
 msgid "Whoah, partner!"
 msgstr ""
 
@@ -58,64 +62,76 @@ msgstr ""
 msgid "Voorlopig alleen email van tuintje: "
 msgstr ""
 
-#: admin/gardener-update.php:40
+#: admin/gardener-update.php:42
 msgid "Gardener updated"
 msgstr ""
 
-#: admin/gardener-update.php:47
+#: admin/gardener-update.php:49
 msgid "Gardener deleted"
 msgstr ""
 
-#: admin/gardener-update.php:55 admin/gardener-update.php:56
+#: admin/gardener-update.php:57 admin/gardener-update.php:58
 msgid "Id missing"
 msgstr ""
 
-#: admin/gardener-update.php:62
+#: admin/gardener-update.php:64
 msgid "Gardener"
 msgstr ""
 
-#: admin/gardener-update.php:64 admin/gardener-create.php:54
+#: admin/gardener-update.php:66 admin/gardener-create.php:45
 msgid "Back to the gardeners list"
 msgstr ""
 
-#: admin/gardener-update.php:81
+#: admin/gardener-update.php:83
 msgid "Save"
 msgstr ""
 
-#: admin/gardener-update.php:81 admin/gardeners-list.php:54
+#: admin/gardener-update.php:83 admin/gardeners-list.php:54
+#: admin/function-admin.php:41
 msgid "Update gardener"
 msgstr ""
 
-#: admin/gardener-update.php:82
+#: admin/gardener-update.php:84
 msgid "Delete"
 msgstr ""
 
-#: admin/gardener-update.php:82
+#: admin/gardener-update.php:84
 msgid "Delete gardener"
 msgstr ""
 
-#: admin/gardener-update.php:82
+#: admin/gardener-update.php:84
 msgid "Delete this gardener?"
 msgstr ""
 
-#: admin/gardener-create.php:47
+#: admin/gardener-update.php:92 admin/gardener-create.php:66
+msgid "User is not authorised for this function"
+msgstr ""
+
+#: admin/gardener-create.php:38
 msgid "Gardener inserted"
 msgstr ""
 
-#: admin/gardener-create.php:52 admin/gardeners-list.php:26
+#: admin/gardener-create.php:43 admin/gardeners-list.php:26
+#: admin/function-admin.php:33
 msgid "Add new gardener"
 msgstr ""
 
-#: admin/gardener-create.php:69
+#: admin/gardener-create.php:60
 msgid "Save gardener"
 msgstr ""
 
-#: admin/gardeners-list.php:23
+#: admin/gardeners-list.php:23 admin/function-admin.php:24
+#: admin/function-admin.php:25
 msgid "Gardeners"
 msgstr ""
 
-#: admin/gardeners-list.php:26
+#: admin/gardeners-list.php:26 admin/function-admin.php:34
 msgid "Add new"
+msgstr ""
+
+#. page title
+#: admin/function-admin.php:42
+msgid "Update"
 msgstr ""
 
 #. Name of the plugin

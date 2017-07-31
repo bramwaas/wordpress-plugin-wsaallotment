@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wsa Allotment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-29 10:46+0000\n"
-"PO-Revision-Date: 2017-07-29 10:55+0000\n"
+"POT-Creation-Date: 2017-07-31 08:50+0000\n"
+"PO-Revision-Date: 2017-07-31 08:52+0000\n"
 "Last-Translator: Bram Waasdorp <bramwaas@waasdorpsoekhan.nl>\n"
 "Language-Team: Dutch\n"
 "Language: nl-NL\n"
@@ -13,7 +13,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: wsaallotment.php:185 wsaallotment.php:197
+#: wsaallotment.php:160
+msgid "Member Administration"
+msgstr "Ledenadministratie"
+
+#: admin/gardener-update.php:92 admin/gardener-create.php:66
+msgid "User is not authorised for this function"
+msgstr "Gebruiker is niet geautoriseerd voor deze functie"
+
+#. page title
+#: admin/function-admin.php:42
+msgid "Update"
+msgstr "Aanpassen"
+
+#: wsaallotment.php:221 wsaallotment.php:231
 msgid "Whoah, partner!"
 msgstr "Whoah, partner!"
 
@@ -57,63 +70,66 @@ msgstr "Nr"
 msgid "Voorlopig alleen email van tuintje: "
 msgstr "Voorlopig alleen email van tuintje: "
 
-#: admin/gardener-update.php:40
+#: admin/gardener-update.php:42
 msgid "Gardener updated"
 msgstr "Tuinder aangepast"
 
-#: admin/gardener-update.php:47
+#: admin/gardener-update.php:49
 msgid "Gardener deleted"
 msgstr "Tuinder verwijderd"
 
-#: admin/gardener-update.php:55 admin/gardener-update.php:56
+#: admin/gardener-update.php:57 admin/gardener-update.php:58
 msgid "Id missing"
 msgstr "Id ontbreekt"
 
-#: admin/gardener-update.php:62
+#: admin/gardener-update.php:64
 msgid "Gardener"
 msgstr "Tuinder"
 
-#: admin/gardener-update.php:64 admin/gardener-create.php:54
+#: admin/gardener-update.php:66 admin/gardener-create.php:45
 msgid "Back to the gardeners list"
 msgstr "Terug naar de tuinders lijst"
 
-#: admin/gardener-update.php:81
+#: admin/gardener-update.php:83
 msgid "Save"
 msgstr "Opslaan"
 
-#: admin/gardener-update.php:81 admin/gardeners-list.php:54
+#: admin/gardener-update.php:83 admin/gardeners-list.php:54
+#: admin/function-admin.php:41
 msgid "Update gardener"
 msgstr "Pas tuinder aan"
 
-#: admin/gardener-update.php:82
+#: admin/gardener-update.php:84
 msgid "Delete"
 msgstr "Verwijder"
 
-#: admin/gardener-update.php:82
+#: admin/gardener-update.php:84
 msgid "Delete gardener"
 msgstr "Verwijder tuinder"
 
-#: admin/gardener-update.php:82
+#: admin/gardener-update.php:84
 msgid "Delete this gardener?"
 msgstr "Verwijder deze tuinder"
 
-#: admin/gardener-create.php:47
+#: admin/gardener-create.php:38
 msgid "Gardener inserted"
 msgstr "Tuinder toegevoegd"
 
-#: admin/gardener-create.php:52 admin/gardeners-list.php:26
+#: admin/gardener-create.php:43 admin/gardeners-list.php:26
+#: admin/function-admin.php:33
 msgid "Add new gardener"
 msgstr "Voeg een tuinder toe"
 
-#: admin/gardener-create.php:69
+#: admin/gardener-create.php:60
 msgid "Save gardener"
 msgstr "Sla tuinder op"
 
-#: admin/gardeners-list.php:23
+#: admin/gardeners-list.php:23 admin/function-admin.php:24
+#: admin/function-admin.php:25
 msgid "Gardeners"
 msgstr "Tuinders"
 
-#: admin/gardeners-list.php:26
+#: admin/gardeners-list.php:26 admin/function-admin.php:34
 msgid "Add new"
 msgstr "Nieuw aanmaken"
 

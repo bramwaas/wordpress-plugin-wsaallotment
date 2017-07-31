@@ -16,36 +16,7 @@
  * @access public
  * @return void
  */
-function wsaallotment_memberadministration_role()
-{
-    add_role(
-        'wsaallotment_member_administration',
-        __('Member Administration','wsaallotment'),
-        [
-            'read'         => true,
-            'member_administration'   => true,
-        ]
-    );
-}
-/**
- * Remove Roles for this plugin
- *
- * @since  0.1.0
- * @access public
- * @return void
- */
-
-function wsaallotment_memberadministration_role_remove()
-{
-    remove_role('wsaallotment_member_administration');
-}
-/**
- * Crud menu on gardener
- *
- * @since  0.1.0
- * @access public
- * @return void
- */
+//
 //menu items
 function wsaallotment_gardeners_modifymenu() {
 	

@@ -86,7 +86,7 @@ final class WsaAllotment_Plugin {
 	 * @return void
 	 */
 	private function includes() {
-		// Load class files.
+		// Load class files. for general use
 //		require_once( $this->dir . 'inc/class-capability.php' );
 		// Load includes files.
 		require_once( $this->dir . 'inc/function-shortcodes.php'                     );
@@ -95,7 +95,7 @@ final class WsaAllotment_Plugin {
 //		require_once( $this->dir . 'inc/template.php' );
 		// Load admin files.
 		if ( is_admin() ) {
-			// General admin functions.
+			// General admin functions. ! only for admin nu for general use
 			require_once( $this->dir . 'admin/function-admin.php' );
 			// Plugin settings.
 //			require_once( $this->dir . 'admin/class-settings.php' );
@@ -132,10 +132,10 @@ final class WsaAllotment_Plugin {
 	private function setup_actions() {
 		// Internationalize the text strings used.
 		add_action( 'plugins_loaded', array( $this, 'i18n' ), 2 );
-		// add the wsaallotment_memberadministration_role
-		add_action('init', 'wsaallotment_memberadministration_role');		
 		// Add dbcheck.
 		add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
+		// add the wsaallotment_memberadministration_role
+		add_action('plugins_loaded', array($this, 'wsaallotment_member_admin_role'));
 		// CRUD actions in admin-menu
 		add_action('admin_menu','wsaallotment_gardeners_modifymenu');
 //		add_action('admin_menu','wsaallotment_allotments_modifymenu');
@@ -153,6 +153,39 @@ final class WsaAllotment_Plugin {
 	public function i18n() {
 		load_plugin_textdomain( 'wsaallotment', false, trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . 'language' );
 	}
+	
+	public function wsaallotment_member_admin_role() {
+		add_role(
+				'wsaallotment_member_administration',
+				__('Member Administration','wsaallotment'),
+				[
+						'read'         => true,
+						'member_administration'   => true,
+				]
+				);
+	}
+	
+	
+	/**
+	 * Remove Roles for this plugin
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return void
+	 */
+	
+	public function wsaallotment_memberadministration_role_remove()
+	{
+		remove_role('wsaallotment_member_administration');
+	}
+	/**
+	 * Crud menu on gardener
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return void
+	 */
+	
 	
 	/**
 	 * Method that runs only when the plugin is activated.
@@ -177,7 +210,8 @@ final class WsaAllotment_Plugin {
 		return 'Wsa Allotment';
 	}
 	/**
-	 * Magic method to keep the object from being cloned.
+	 * Magic method to keep the object from bein		add_action('plugins_loaded', array($this, 'test'));
+g cloned.
 	 *
 	 * @since  0.1.0
 	 * @access public
@@ -186,9 +220,7 @@ final class WsaAllotment_Plugin {
 	public function __clone() {
 		_doing_it_wrong( __FUNCTION__, esc_html__( 'Whoah, partner!', 'wsaallotment' ), '1.0.0' );
 	}
-	/**# Add dbcheck.
-add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
-
+/**
 	 * Magic method to keep the object from being unserialized.
 	 *
 	 * @since  0.1.0
@@ -201,8 +233,7 @@ add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
 	
 }
 	
-/**# Add dbcheck.
-add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
+/**
 
  * Gets the instance of the `WsaAllotment_Plugin` class.  This function is useful for quickly grabbing data
  * used throughout the plugin.
