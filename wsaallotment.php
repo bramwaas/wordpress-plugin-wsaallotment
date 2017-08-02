@@ -104,7 +104,7 @@ final class WsaAllotment_Plugin {
 			require_once( $this->dir . 'admin/gardener-create.php');
 			require_once( $this->dir . 'admin/gardener-update.php');
 //			require_once( $this->dir . 'admin/allotments-list.php');
-//			require_once( $this->dir . 'admin/allotment-create.php');
+		    require_once( $this->dir . 'admin/allotment-crud.php');
 //			require_once( $this->dir . 'admin/allotment-update.php');
 			
 		}
