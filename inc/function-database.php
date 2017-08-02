@@ -107,7 +107,7 @@ function wsaallotment_gardener_fields () {
 			'allotment_nr' => null); 
 }
 /**
- * Give the fields for table gardener with transaltable labelname . 
+ * Give the fields for table gardener with translatable labelname . 
  * 
  *
  * @since  0.1.0
@@ -124,6 +124,43 @@ function wsaallotment_gardener_labels () {
 			'gardener_first_name' => __('First name' , 'wsaallotment'),
 			'allotment_section' => __('Section' , 'wsaallotment'),
 			'allotment_nr' => __('Nr' , 'wsaallotment')); 
+	
+}
+/**
+ * Give the fields for table allotment without the id with empty value.
+ *
+ *
+ * @since  0.1.0
+ * @access public
+ * @return array A
+ * 
+ */
+function wsaallotment_allotment_fields () {
+	return array(
+			'allotment_id' => null,
+			'allotment_section' => null,
+			'allotment_nr' => null,
+			'allotment_contribution' => null,
+			'allotment_insurance' => null,
+			'allotment_insured' => null,
+			'allotment_description');
+}
+/**
+ * Give the fields for table allotment with translatable labelname .
+ *
+ *
+ * @since  0.1.0
+ * @access public
+ * @return array A
+ */
+function wsaallotment_allotment_labels () {
+	return array('allotment_id' => __('Id' , 'wsaallotment'),
+			'allotment_section' => __('Section' , 'wsaallotment'),
+			'allotment_nr' => __('Nr' , 'wsaallotment'),
+			'allotment_contribution' => __('Contribution' , 'wsaallotment'),
+			'allotment_insurance' => __('Insurance' , 'wsaallotment'),
+			'allotment_insured' => __('Insured' , 'wsaallotment'),
+			'allotment_description' => __('Description' , 'wsaallotment'));
 	
 }
 /**

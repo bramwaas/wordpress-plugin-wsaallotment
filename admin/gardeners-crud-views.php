@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin Gardeners list
+ * Admin Allotment Crud
  *
  * @package    wsa allotment
  * @subpackage Admin
@@ -10,7 +10,7 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 /**
- * Admin list view on gardener
+ * Admin list view on allotment
  *
  * @since  0.1.0
  * @access public
