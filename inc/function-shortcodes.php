@@ -61,7 +61,7 @@ function is_gardener( $email = null ) {
  * @param  string  $email
  * @return boolean
  */
-function is_allotment( $email = null ) {
+function has_allotment( $email = null ) {
 	
 	return false;
 }
@@ -101,8 +101,8 @@ function not_gardener_shortcode( $attr, $content = null ) {
  * @param  string  $content
  * @return string
  */
-function is_allotment_owner_shortcode( $attr, $content = null ) {
-	return is_feed() || ! is_allotment_owner() || is_null( $content ) ? '' : do_shortcode( $content );
+function has_allotment_shortcode( $attr, $content = null ) {
+	return is_feed() || ! has_allotment() || is_null( $content ) ? '' : do_shortcode( $content );
 }
 /**
  * Displays content if the user viewing it is not currently logged in or not related to an allotment.
@@ -113,8 +113,8 @@ function is_allotment_owner_shortcode( $attr, $content = null ) {
  * @param  string  $content
  * @return string
  */
-function not_allotment_owner_shortcode( $attr, $content = null ) {
-	return is_allotment_owner() || is_null( $content ) ? '' : do_shortcode( $content );
+function not_allotment_shortcode( $attr, $content = null ) {
+	return has_allotment() || is_null( $content ) ? '' : do_shortcode( $content );
 }
 
 /**
@@ -125,7 +125,7 @@ function not_allotment_owner_shortcode( $attr, $content = null ) {
  * @return string
  */
 function view_gardener_shortcode($attr, $content = null) {
-	$content = 'Geen user gevonden';
+	$content = __('User not found', 'wsaallotement');
         $current_user = wp_get_current_user(); 
         if ( ( $current_user instanceof WP_User ) ) {
         	$row = wsaallotment_get_gardener_row ($current_user->user_login);
@@ -164,10 +164,34 @@ function wsaallotment_view_gardener ($row = null) {
  * @return string
  */
 function view_allotment_shortcode($attr, $content = null) {
-	$content = 'Geen user gevonden';
+	$content = __('User not found', 'wsaallotement');
         $current_user = wp_get_current_user(); 
         if ( ( $current_user instanceof WP_User ) ) {
-         	$content = __('Voorlopig alleen email van tuintje: ', 'wsaallotment') . esc_html( $current_user->user_email );
+        	$row = wsaallotment_get_allotment_row ($current_user->user_login);
+		$content = wsaallotment_view_allotment ($row) ;
 	}
- 	return $content;
+	return $content;
 }
+/**
+ * Displays an allotment row in a table.
+ *
+ * @since  0.1.0
+ * @access public
+ * @return string
+ */
+function wsaallotment_view_allotment ($row = null) {
+	$labels = wsaallotment_allotment_labels ();	
+   	$content = '
+<table class="table wp-list-table widefat fixed">';
+   	foreach($row as $field => $value) { 
+               $content .= '
+		<tr>
+			<th scope="row" class="ss-th-width">' . $labels[$field] . '</th>
+			<td  class="ss-field-width">' . $value . '</td>
+		</tr>';
+        	}
+            $content .= '
+</table>';
+	    return $content;
+}
+	
