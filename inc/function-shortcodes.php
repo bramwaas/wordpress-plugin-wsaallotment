@@ -32,9 +32,9 @@ function wsaallotment_register_shortcodes() {
 	// Add the `[not_gardener]` shortcode.
 	add_shortcode( 'not_gardener', 'not_gardener_shortcode' );
 	// Add the `[is_allotment-owner]` shortcode.
-	add_shortcode( 'is_allotment_owner', 'is_allotment-owner_shortcode' );
+	add_shortcode( 'has_allotment', 'has_allotment_shortcode' );
 	// Add the `[not_allotment-owner]` shortcode.
-	add_shortcode( 'not_allotment_owner', 'not_allotment-owner_shortcode' );
+	add_shortcode( 'not_allotment', 'not_allotment_shortcode' );
 }
 /**
  * Check if email is is related to a gardener. 
