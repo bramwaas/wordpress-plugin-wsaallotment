@@ -100,9 +100,9 @@ final class WsaAllotment_Plugin {
 			// Plugin settings.
 //			require_once( $this->dir . 'admin/class-settings.php' );
 			// CRUD on gardener and allotment
-			require_once( $this->dir . 'admin/gardeners-list.php');
-			require_once( $this->dir . 'admin/gardener-create.php');
-			require_once( $this->dir . 'admin/gardener-update.php');
+//			require_once( $this->dir . 'admin/gardeners-list.php');
+//			require_once( $this->dir . 'admin/gardener-create.php');
+//			require_once( $this->dir . 'admin/gardener-update.php');
 //			require_once( $this->dir . 'admin/allotments-list.php');
 		    require_once( $this->dir . 'admin/allotment-crud.php');
 //			require_once( $this->dir . 'admin/allotment-update.php');

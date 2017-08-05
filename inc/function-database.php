@@ -21,7 +21,7 @@ function wsaallotment_install_db() {
 	// include upgrade db functions
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 	// set tablenames with prefix  in a variable
-	global $wsaallotment_db_version;
+	global $wsaallotment_db_version;http://www.waasdorpsoekhan.nl/
 	$wsaallotment_db_version = '0.1.0';
 	global $wpdb;
 	$table_name_gardener  = $wpdb->prefix . "gardener";
@@ -106,7 +106,7 @@ function wsaallotment_gardener_fields () {
 			'allotment_section' => null,
 			'allotment_nr' => null); 
 }
-/**
+/**http://www.waasdorpsoekhan.nl/
  * Give the fields for table gardener with translatable labelname . 
  * 
  *
@@ -137,13 +137,13 @@ function wsaallotment_gardener_labels () {
  */
 function wsaallotment_allotment_fields () {
 	return array(
-			'allotment_id' => null,
+//			'allotment_id' => null,
 			'allotment_section' => null,
 			'allotment_nr' => null,
 			'allotment_contribution' => null,
 			'allotment_insurance' => null,
 			'allotment_insured' => null,
-			'allotment_description');
+			'allotment_description' => null);
 }
 /**
  * Give the fields for table allotment with translatable labelname .
