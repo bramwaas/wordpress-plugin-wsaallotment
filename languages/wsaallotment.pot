@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-31 08:50+0000\n"
+"POT-Creation-Date: 2017-08-05 12:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Whoah, partner!"
 msgstr ""
 
-#: inc/function-database.php:118
+#: inc/function-database.php:118 inc/function-database.php:157
 msgid "Id"
 msgstr ""
 
@@ -50,16 +50,28 @@ msgstr ""
 msgid "First name"
 msgstr ""
 
-#: inc/function-database.php:125
+#: inc/function-database.php:125 inc/function-database.php:158
 msgid "Section"
 msgstr ""
 
-#: inc/function-database.php:126
+#: inc/function-database.php:126 inc/function-database.php:159
 msgid "Nr"
 msgstr ""
 
-#: inc/function-shortcodes.php:170
-msgid "Voorlopig alleen email van tuintje: "
+#: inc/function-database.php:160
+msgid "Contribution"
+msgstr ""
+
+#: inc/function-database.php:161
+msgid "Insurance"
+msgstr ""
+
+#: inc/function-database.php:162
+msgid "Insured"
+msgstr ""
+
+#: inc/function-database.php:163
+msgid "Description"
 msgstr ""
 
 #: admin/gardener-update.php:42
@@ -71,6 +83,7 @@ msgid "Gardener deleted"
 msgstr ""
 
 #: admin/gardener-update.php:57 admin/gardener-update.php:58
+#: admin/allotment-crud.php:122 admin/allotment-crud.php:123
 msgid "Id missing"
 msgstr ""
 
@@ -82,16 +95,16 @@ msgstr ""
 msgid "Back to the gardeners list"
 msgstr ""
 
-#: admin/gardener-update.php:83
+#: admin/gardener-update.php:83 admin/allotment-crud.php:148
 msgid "Save"
 msgstr ""
 
 #: admin/gardener-update.php:83 admin/gardeners-list.php:54
-#: admin/function-admin.php:41
+#: admin/function-admin.php:63
 msgid "Update gardener"
 msgstr ""
 
-#: admin/gardener-update.php:84
+#: admin/gardener-update.php:84 admin/allotment-crud.php:149
 msgid "Delete"
 msgstr ""
 
@@ -103,8 +116,65 @@ msgstr ""
 msgid "Delete this gardener?"
 msgstr ""
 
-#: admin/gardener-update.php:92 admin/gardener-create.php:66
+#: admin/gardener-update.php:92 admin/allotment-crud.php:157
+#: admin/allotment-crud.php:214 admin/gardener-create.php:66
 msgid "User is not authorised for this function"
+msgstr ""
+
+#. page title
+#: admin/allotment-crud.php:23 admin/function-admin.php:24
+#: admin/function-admin.php:25
+msgid "Allotments"
+msgstr ""
+
+#. parent slug
+#. page title
+#: admin/allotment-crud.php:26 admin/allotment-crud.php:26
+#: admin/allotment-crud.php:191 admin/function-admin.php:40
+#: admin/function-admin.php:41
+msgid "Add new allotment"
+msgstr ""
+
+#. parent slug
+#: admin/allotment-crud.php:54 admin/allotment-crud.php:148
+#: admin/function-admin.php:48
+msgid "Update allotment"
+msgstr ""
+
+#: admin/allotment-crud.php:107
+msgid "Allotment updated"
+msgstr ""
+
+#: admin/allotment-crud.php:114
+msgid "Allotment deleted"
+msgstr ""
+
+#: admin/allotment-crud.php:129
+msgid "Allotment"
+msgstr ""
+
+#: admin/allotment-crud.php:131
+msgid "Back to the allotments list"
+msgstr ""
+
+#: admin/allotment-crud.php:149
+msgid "Delete allotment"
+msgstr ""
+
+#: admin/allotment-crud.php:149
+msgid "Delete this allotment?"
+msgstr ""
+
+#: admin/allotment-crud.php:186
+msgid "Allotment inserted"
+msgstr ""
+
+#: admin/allotment-crud.php:193
+msgid "Back to the allotment list"
+msgstr ""
+
+#: admin/allotment-crud.php:208
+msgid "Save allotment"
 msgstr ""
 
 #: admin/gardener-create.php:38
@@ -112,7 +182,7 @@ msgid "Gardener inserted"
 msgstr ""
 
 #: admin/gardener-create.php:43 admin/gardeners-list.php:26
-#: admin/function-admin.php:33
+#: admin/function-admin.php:55 admin/function-admin.php:56
 msgid "Add new gardener"
 msgstr ""
 
@@ -120,17 +190,17 @@ msgstr ""
 msgid "Save gardener"
 msgstr ""
 
-#: admin/gardeners-list.php:23 admin/function-admin.php:24
-#: admin/function-admin.php:25
+#: admin/gardeners-list.php:23 admin/function-admin.php:31
+#: admin/function-admin.php:32
 msgid "Gardeners"
 msgstr ""
 
-#: admin/gardeners-list.php:26 admin/function-admin.php:34
+#: admin/gardeners-list.php:26
 msgid "Add new"
 msgstr ""
 
 #. page title
-#: admin/function-admin.php:42
+#: admin/function-admin.php:49 admin/function-admin.php:64
 msgid "Update"
 msgstr ""
 

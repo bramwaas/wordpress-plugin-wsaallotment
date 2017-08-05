@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wsa Allotment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-31 08:50+0000\n"
-"PO-Revision-Date: 2017-07-31 08:52+0000\n"
+"POT-Creation-Date: 2017-08-05 12:34+0000\n"
+"PO-Revision-Date: 2017-08-05 12:40+0000\n"
 "Last-Translator: Bram Waasdorp <bramwaas@waasdorpsoekhan.nl>\n"
 "Language-Team: Dutch\n"
 "Language: nl-NL\n"
@@ -13,24 +13,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
+#: inc/function-database.php:160
+msgid "Contribution"
+msgstr "Contributie"
+
+#: inc/function-database.php:161
+msgid "Insurance"
+msgstr "Verzekering"
+
+#: inc/function-database.php:162
+msgid "Insured"
+msgstr "Verzekerd"
+
+#: inc/function-database.php:163
+msgid "Description"
+msgstr "Omschrijving"
+
+#. page title
+#: admin/allotment-crud.php:23 admin/function-admin.php:24
+#: admin/function-admin.php:25
+msgid "Allotments"
+msgstr "Volkstuintjes"
+
+#. parent slug
+#. page title
+#: admin/allotment-crud.php:26 admin/allotment-crud.php:26
+#: admin/allotment-crud.php:191 admin/function-admin.php:40
+#: admin/function-admin.php:41
+msgid "Add new allotment"
+msgstr "Voeg een tuintje toe"
+
+#. parent slug
+#: admin/allotment-crud.php:54 admin/allotment-crud.php:148
+#: admin/function-admin.php:48
+msgid "Update allotment"
+msgstr "Wijzig tuintje"
+
+#: admin/allotment-crud.php:107
+msgid "Allotment updated"
+msgstr "Tuintje aangepast"
+
+#: admin/allotment-crud.php:114
+msgid "Allotment deleted"
+msgstr "Tuintje verwijderd"
+
+#: admin/allotment-crud.php:129
+msgid "Allotment"
+msgstr "Volkstuintje"
+
+#: admin/allotment-crud.php:131
+msgid "Back to the allotments list"
+msgstr "Terug naar de lijst met tuintjes"
+
+#: admin/allotment-crud.php:149
+msgid "Delete allotment"
+msgstr "Verwijder tuintje"
+
+#: admin/allotment-crud.php:149
+msgid "Delete this allotment?"
+msgstr "Verwijder dit tuintje?"
+
+#: admin/allotment-crud.php:186
+msgid "Allotment inserted"
+msgstr "Volkstuintje toegevoegd"
+
+#: admin/allotment-crud.php:193
+msgid "Back to the allotment list"
+msgstr "Terug naar de tuintjes lijst"
+
+#: admin/allotment-crud.php:208
+msgid "Save allotment"
+msgstr "Opslaan tuintje"
+
 #: wsaallotment.php:160
 msgid "Member Administration"
 msgstr "Ledenadministratie"
-
-#: admin/gardener-update.php:92 admin/gardener-create.php:66
-msgid "User is not authorised for this function"
-msgstr "Gebruiker is niet geautoriseerd voor deze functie"
-
-#. page title
-#: admin/function-admin.php:42
-msgid "Update"
-msgstr "Aanpassen"
 
 #: wsaallotment.php:221 wsaallotment.php:231
 msgid "Whoah, partner!"
 msgstr "Whoah, partner!"
 
-#: inc/function-database.php:118
+#: inc/function-database.php:118 inc/function-database.php:157
 msgid "Id"
 msgstr "Id"
 
@@ -58,17 +121,13 @@ msgstr "Achternaam"
 msgid "First name"
 msgstr "Voornaam"
 
-#: inc/function-database.php:125
+#: inc/function-database.php:125 inc/function-database.php:158
 msgid "Section"
 msgstr "Vak"
 
-#: inc/function-database.php:126
+#: inc/function-database.php:126 inc/function-database.php:159
 msgid "Nr"
 msgstr "Nr"
-
-#: inc/function-shortcodes.php:170
-msgid "Voorlopig alleen email van tuintje: "
-msgstr "Voorlopig alleen email van tuintje: "
 
 #: admin/gardener-update.php:42
 msgid "Gardener updated"
@@ -79,6 +138,7 @@ msgid "Gardener deleted"
 msgstr "Tuinder verwijderd"
 
 #: admin/gardener-update.php:57 admin/gardener-update.php:58
+#: admin/allotment-crud.php:122 admin/allotment-crud.php:123
 msgid "Id missing"
 msgstr "Id ontbreekt"
 
@@ -90,16 +150,16 @@ msgstr "Tuinder"
 msgid "Back to the gardeners list"
 msgstr "Terug naar de tuinders lijst"
 
-#: admin/gardener-update.php:83
+#: admin/gardener-update.php:83 admin/allotment-crud.php:148
 msgid "Save"
 msgstr "Opslaan"
 
 #: admin/gardener-update.php:83 admin/gardeners-list.php:54
-#: admin/function-admin.php:41
+#: admin/function-admin.php:63
 msgid "Update gardener"
 msgstr "Pas tuinder aan"
 
-#: admin/gardener-update.php:84
+#: admin/gardener-update.php:84 admin/allotment-crud.php:149
 msgid "Delete"
 msgstr "Verwijder"
 
@@ -111,12 +171,17 @@ msgstr "Verwijder tuinder"
 msgid "Delete this gardener?"
 msgstr "Verwijder deze tuinder"
 
+#: admin/gardener-update.php:92 admin/allotment-crud.php:157
+#: admin/allotment-crud.php:214 admin/gardener-create.php:66
+msgid "User is not authorised for this function"
+msgstr "Gebruiker is niet geautoriseerd voor deze functie"
+
 #: admin/gardener-create.php:38
 msgid "Gardener inserted"
 msgstr "Tuinder toegevoegd"
 
 #: admin/gardener-create.php:43 admin/gardeners-list.php:26
-#: admin/function-admin.php:33
+#: admin/function-admin.php:55 admin/function-admin.php:56
 msgid "Add new gardener"
 msgstr "Voeg een tuinder toe"
 
@@ -124,14 +189,19 @@ msgstr "Voeg een tuinder toe"
 msgid "Save gardener"
 msgstr "Sla tuinder op"
 
-#: admin/gardeners-list.php:23 admin/function-admin.php:24
-#: admin/function-admin.php:25
+#: admin/gardeners-list.php:23 admin/function-admin.php:31
+#: admin/function-admin.php:32
 msgid "Gardeners"
 msgstr "Tuinders"
 
-#: admin/gardeners-list.php:26 admin/function-admin.php:34
+#: admin/gardeners-list.php:26
 msgid "Add new"
 msgstr "Nieuw aanmaken"
+
+#. page title
+#: admin/function-admin.php:49 admin/function-admin.php:64
+msgid "Update"
+msgstr "Aanpassen"
 
 #. Name of the plugin
 msgid "Wsa Allotment"
