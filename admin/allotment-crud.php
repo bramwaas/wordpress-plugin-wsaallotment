@@ -228,7 +228,7 @@ function wsaallotment_gardeners_list() {
          <h2><?php _e('Gardeners', 'wsaallotment'); ?></h2>
         <div class="tablenav top">
             <div class="alignleft actions">
-                <a href="<?php echo admin_url('admin.php?page=wsaallotment_gardener_create'); ?>" title="<?php _e('Add new gardener', 'wsaallotment'); ?>" ><?php _e('Add new', 'wsaallotment'); ?></a>
+                <a href="<?php echo admin_url('admin.php?page=wsaallotment_gardener_create'); ?>" title="<?php _e('Add new gardener', 'wsaallotment'); ?>" ><?php _e('Add new gardener', 'wsaallotment'); ?></a>
             </div>
             <br class="clear">
         </div>

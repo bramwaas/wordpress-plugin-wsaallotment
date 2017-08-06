@@ -129,7 +129,12 @@ function view_gardener_shortcode($attr, $content = null) {
         $current_user = wp_get_current_user(); 
         if ( ( $current_user instanceof WP_User ) ) {
         	$row = wsaallotment_get_gardener_row ($current_user->user_login);
+        if (isset($row)) {	
 		$content = wsaallotment_view_gardener ($row) ;
+        }
+        else {
+        	$content = sprintf(__('User %1$s is not connected to a gardener', 'wsaallotment'), $current_user->user_login);
+        }	
 	}
  	return $content;
 }
@@ -168,8 +173,14 @@ function view_allotment_shortcode($attr, $content = null) {
         $current_user = wp_get_current_user(); 
         if ( ( $current_user instanceof WP_User ) ) {
         	$row = wsaallotment_get_allotment_row ($current_user->user_login);
-		$content = wsaallotment_view_allotment ($row) ;
-	}
+        	if (isset($row)) {
+        		$content = wsaallotment_view_allotment ($row) ;
+        	}
+        	else {
+        		$content = sprintf(__('User %1$s is not connected to an allotment', 'wsaallotment'), $current_user->user_login);
+        	}
+        	
+    }
 	return $content;
 }
 /**

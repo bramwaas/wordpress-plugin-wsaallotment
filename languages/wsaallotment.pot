@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-05 12:31+0000\n"
+"POT-Creation-Date: 2017-08-06 13:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -74,51 +74,14 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: admin/gardener-update.php:42
-msgid "Gardener updated"
+#: inc/function-shortcodes.php:136
+#, php-format
+msgid "User %1$s is not connected to a gardener"
 msgstr ""
 
-#: admin/gardener-update.php:49
-msgid "Gardener deleted"
-msgstr ""
-
-#: admin/gardener-update.php:57 admin/gardener-update.php:58
-#: admin/allotment-crud.php:122 admin/allotment-crud.php:123
-msgid "Id missing"
-msgstr ""
-
-#: admin/gardener-update.php:64
-msgid "Gardener"
-msgstr ""
-
-#: admin/gardener-update.php:66 admin/gardener-create.php:45
-msgid "Back to the gardeners list"
-msgstr ""
-
-#: admin/gardener-update.php:83 admin/allotment-crud.php:148
-msgid "Save"
-msgstr ""
-
-#: admin/gardener-update.php:83 admin/gardeners-list.php:54
-#: admin/function-admin.php:63
-msgid "Update gardener"
-msgstr ""
-
-#: admin/gardener-update.php:84 admin/allotment-crud.php:149
-msgid "Delete"
-msgstr ""
-
-#: admin/gardener-update.php:84
-msgid "Delete gardener"
-msgstr ""
-
-#: admin/gardener-update.php:84
-msgid "Delete this gardener?"
-msgstr ""
-
-#: admin/gardener-update.php:92 admin/allotment-crud.php:157
-#: admin/allotment-crud.php:214 admin/gardener-create.php:66
-msgid "User is not authorised for this function"
+#: inc/function-shortcodes.php:180
+#, php-format
+msgid "User %1$s is not connected to an allotment"
 msgstr ""
 
 #. page title
@@ -149,6 +112,11 @@ msgstr ""
 msgid "Allotment deleted"
 msgstr ""
 
+#: admin/allotment-crud.php:122 admin/allotment-crud.php:123
+#: admin/allotment-crud.php:321 admin/allotment-crud.php:322
+msgid "Id missing"
+msgstr ""
+
 #: admin/allotment-crud.php:129
 msgid "Allotment"
 msgstr ""
@@ -157,12 +125,26 @@ msgstr ""
 msgid "Back to the allotments list"
 msgstr ""
 
+#: admin/allotment-crud.php:148 admin/allotment-crud.php:208
+#: admin/allotment-crud.php:347 admin/allotment-crud.php:406
+msgid "Save"
+msgstr ""
+
+#: admin/allotment-crud.php:149 admin/allotment-crud.php:348
+msgid "Delete"
+msgstr ""
+
 #: admin/allotment-crud.php:149
 msgid "Delete allotment"
 msgstr ""
 
 #: admin/allotment-crud.php:149
 msgid "Delete this allotment?"
+msgstr ""
+
+#: admin/allotment-crud.php:157 admin/allotment-crud.php:214
+#: admin/allotment-crud.php:356 admin/allotment-crud.php:412
+msgid "User is not authorised for this function"
 msgstr ""
 
 #: admin/allotment-crud.php:186
@@ -177,26 +159,52 @@ msgstr ""
 msgid "Save allotment"
 msgstr ""
 
-#: admin/gardener-create.php:38
-msgid "Gardener inserted"
-msgstr ""
-
-#: admin/gardener-create.php:43 admin/gardeners-list.php:26
-#: admin/function-admin.php:55 admin/function-admin.php:56
-msgid "Add new gardener"
-msgstr ""
-
-#: admin/gardener-create.php:60
-msgid "Save gardener"
-msgstr ""
-
-#: admin/gardeners-list.php:23 admin/function-admin.php:31
+#: admin/allotment-crud.php:228 admin/function-admin.php:31
 #: admin/function-admin.php:32
 msgid "Gardeners"
 msgstr ""
 
-#: admin/gardeners-list.php:26
-msgid "Add new"
+#: admin/allotment-crud.php:231 admin/allotment-crud.php:231
+#: admin/allotment-crud.php:389 admin/function-admin.php:55
+#: admin/function-admin.php:56
+msgid "Add new gardener"
+msgstr ""
+
+#: admin/allotment-crud.php:259 admin/allotment-crud.php:347
+#: admin/function-admin.php:63
+msgid "Update gardener"
+msgstr ""
+
+#: admin/allotment-crud.php:306
+msgid "Gardener updated"
+msgstr ""
+
+#: admin/allotment-crud.php:313
+msgid "Gardener deleted"
+msgstr ""
+
+#: admin/allotment-crud.php:328
+msgid "Gardener"
+msgstr ""
+
+#: admin/allotment-crud.php:330 admin/allotment-crud.php:391
+msgid "Back to the gardeners list"
+msgstr ""
+
+#: admin/allotment-crud.php:348
+msgid "Delete gardener"
+msgstr ""
+
+#: admin/allotment-crud.php:348
+msgid "Delete this gardener?"
+msgstr ""
+
+#: admin/allotment-crud.php:384
+msgid "Gardener inserted"
+msgstr ""
+
+#: admin/allotment-crud.php:406
+msgid "Save gardener"
 msgstr ""
 
 #. page title
