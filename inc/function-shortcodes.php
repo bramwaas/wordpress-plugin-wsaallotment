@@ -37,32 +37,42 @@ function wsaallotment_register_shortcodes() {
 	add_shortcode( 'not_allotment', 'not_allotment_shortcode' );
 }
 /**
- * Check if email is is related to a gardener. 
+ * Check if user is is related to a gardener. 
  * Default email is email-address of logged in user.
  *
  * @since  0.1.0
  * @access public
- * @param  array   $attr
- * @param  string  $email
+ * @param  none
  * @return boolean
  */
-function is_gardener( $email = null ) {
-	
+function is_gardener() {
+	$current_user = wp_get_current_user();
+	if ( ( $current_user instanceof WP_User ) ) {
+		$row = wsaallotment_get_gardener_row ($current_user->user_login);
+		if (isset($row)) {
+			return true ;
+		}
+	}
 	return false;
 }
 
 /**
- * Check if email is is related to a allotment. 
+ * Check if user is is related to a allotment. 
  * Default email is email-address of logged in user.
  *
  * @since  0.1.0
  * @access public
- * @param  array   $attr
- * @param  string  $email
+ * @param  none
  * @return boolean
  */
-function has_allotment( $email = null ) {
-	
+function has_allotment() {
+	$current_user = wp_get_current_user();
+	if ( ( $current_user instanceof WP_User ) ) {
+		$row = wsaallotment_get_allotment_row ($current_user->user_login);
+		if (isset($row)) {
+			return true ;
+		}
+	}
 	return false;
 }
 
