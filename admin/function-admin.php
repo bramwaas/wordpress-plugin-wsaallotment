@@ -66,5 +66,64 @@ function wsaallotment_gardeners_modifymenu() {
 					'wsaallotment_gardener_update', //menu slug
 					'wsaallotment_gardener_update'); //function
 							
+			add_submenu_page('wsaallotment_allotments_list', //parent slug
+					__('Info', 'wsaallotment'), //page title
+					__('Info', 'wsaallotment'), //menu title
+					'member_administration', //capability
+					'wsaallotment_info', //menu slug
+					'wsaallotment_info'); //function
+					
+}
+function wsaallotment_info () {
+//
+	echo('<div class="wrap">');
+	_e('<h2>Info</h2><p>', 'wsaallotment');
+	
+	_e('<strong>Af te sluiten shortcodes.</strong></p><p>', 'wsaallotment');
+	
+	_e('Formaat: [shortcode]...te bewerken tekst ...[/shortcode]</p><p>', 'wsaallotment');
+	
+	_e('De tekst tussen de beginshortcode [shortcode] en de eindshortcode [/shortcode] wordt bewerkt. In deze plugin wordt de inhoud al of niet getoond.</p><p>', 'wsaallotment');
+	
+	_e('<strong>Voorbeelden:</strong></p><p>', 'wsaallotment');
+	
+	_e('<strong>is_gardener:</strong></p><p>', 'wsaallotment');
+	
+	_e('[is_gardener]toont deze info als gebruiker een tuinder is[/is_gardener]</p><p>', 'wsaallotment');
+	
+	_e('<strong>not_gardener</strong>:</p><p>', 'wsaallotment');
+	
+	_e('[not_gardener]toont deze info als gebruiker een tuinder is, of niet ingelogd[/not_gardener]</p><p>', 'wsaallotment');
+	
+	_e('<strong>has_allotment</strong>:</p><p>', 'wsaallotment');
+	
+	_e('[has_allotment]toont deze info als gebruiker een tuinder is en een tuintje heeft[/has_allotment]</p><p>', 'wsaallotment');
+	
+	_e('<strong>not_allotment</strong>:</p><p>', 'wsaallotment');
+	
+	_e('[not_allotment]toont deze info als gebruiker niet een tuinder is of geen tuintje heeft[/not_allotment]</p><p>', 'wsaallotment');
+	
+	_e('<strong>Eenvoudige shortcodes.</strong></p><p>', 'wsaallotment');
+	
+	_e('Formaat [shortcode]</p><p>', 'wsaallotment');
+	
+	_e('de shortcode wordt vervangen door een inhoud.</p><p>', 'wsaallotment');
+	
+	_e('<strong>Voorbeelden:</strong></p><p>', 'wsaallotment');
+	
+	_e('<strong>view_gardener,</p><p>', 'wsaallotment');
+	_e('</strong>toont de gegevens die wij van deze tuinder hebben geadministreerd:</p><p>', 'wsaallotment');
+	
+	_e('[view_gardener]</p><p>', 'wsaallotment');
+	
+	_e('<strong>view_allotment,</p><p>', 'wsaallotment');
+	_e('</strong>toont de gegevens die wij van de volkstuin van deze tuinder hebben geadministreerd:</p><p>', 'wsaallotment');
+	_e('[view_allotment]</p><p>', 'wsaallotment');
+
+	echo('</p></div>');
+	
+	
+	
+	
 }
 
