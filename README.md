@@ -18,16 +18,17 @@ This project is licensed under the [GNU GPL](http://www.gnu.org/licenses/old-lic
 
 ## Documentation
 
-### The relationship of website-user, gardener and allotment
+### The relationship of website-user, gardener, allotment and section
 
-* **user** 		unique-key 	user_email
-* **gardener**		unique-key	user_email
-			foreign-key section, allotmentnr
+* **user** 		unique-key 	user_login, user_email
+* **gardener**		unique-key	user_login, user_email
+			foreign-key 	user_login, section, allotmentnr
 * **allotment**		unique-key	section, allotmentnr 
+* **section**		unique-key	section_id (= section in gardener and allotment)
 
 ### Shortcodes:
-* **view_gardener**		displays a single gardner selected by emailaddress of user
-* **view_allotment**		displays a single allotment selected by emailaddress of user
+* **view_gardener**		displays a single gardner selected by user_login of user
+* **view_allotment**		displays a single allotment selected by user_login of user
 * **is_gardener**		displays content only when logged in user is a gardener
 * **not_gardener**		displays content only when user is not logged in or is not a gardener  
 * **has_allotment**		displays content only when logged in user is owner of (related to) an allotment
