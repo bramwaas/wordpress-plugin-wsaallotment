@@ -8,9 +8,10 @@
  * @copyright  Copyright (c)  2017, Bram Waasdorp
  * @link       https://github.com/bramwaas/wordpress-plugin-wsaallotment
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * 20170808 BW section toegvoegd, version naar 0.2.0
  */
 /**
- * Registers shortcodes.
+ * Create update database.
  *
  * @since  0.1.0
  * @access public
@@ -22,10 +23,12 @@ function wsaallotment_install_db() {
 	require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 	// set tablenames with prefix  in a variable
 	global $wsaallotment_db_version;http://www.waasdorpsoekhan.nl/
-	$wsaallotment_db_version = '0.1.0';
+	$wsaallotment_db_version = '0.2.0';
 	global $wpdb;
-	$table_name_gardener  = $wpdb->prefix . "gardener";
-	$table_name_allotment = $wpdb->prefix . "allotment";
+	$table_name_gardener  = $wpdb->prefix . 'gardener';
+	$table_name_allotment = $wpdb->prefix . 'allotment';
+	$table_name_section = $wpdb->prefix . 'section';
+
 	$charset_collate = $wpdb->get_charset_collate();
 
 	/**
@@ -70,6 +73,15 @@ function wsaallotment_install_db() {
 	) $charset_collate;";
 	
 	dbDelta( $sql );
+	
+	$sql = "CREATE TABLE $table_name_section (
+	section_id varchar(1) NOT NULL,
+	section_name varchar(60) NOT NULL,
+	section_description text,
+	PRIMARY KEY  (section_id)
+	) $charset_collate;";
+	
+	dbDelta( $sql );
 	// set option for this version of db-tables
 	update_option( 'wsaallotment_db_version', $wsaallotment_db_version );
 }
@@ -106,7 +118,7 @@ function wsaallotment_gardener_fields () {
 			'allotment_section' => null,
 			'allotment_nr' => null); 
 }
-/**http://www.waasdorpsoekhan.nl/
+/**
  * Give the fields for table gardener with translatable labelname . 
  * 
  *
@@ -124,6 +136,35 @@ function wsaallotment_gardener_labels () {
 			'gardener_first_name' => __('First name' , 'wsaallotment'),
 			'allotment_section' => __('Section' , 'wsaallotment'),
 			'allotment_nr' => __('Nr' , 'wsaallotment')); 
+	
+}
+/**
+ * Give the fields for table section without the id with empty value.
+ *
+ *
+ * @since  0.2.0
+ * @access public
+ * @return array A
+ * 
+ */
+function wsaallotment_section_fields () {
+	return array(
+//			'section_id' => null,
+			'section_name' => null,
+			'section_description' => null);
+}
+/**
+ * Give the fields for table section with translatable labelname . 
+ * 
+ *
+ * @since  0.2.0
+ * @access public
+ * @return array A
+ */
+function wsaallotment_section_labels () {
+		return array('section_id' => __('Section' , 'wsaallotment'),
+			'section_name' => __('Section name' , 'wsaallotment'),
+			'section_description' => __('Description' , 'wsaallotment')); 
 	
 }
 /**
