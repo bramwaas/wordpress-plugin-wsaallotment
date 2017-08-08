@@ -3,7 +3,7 @@
 Plugin Name: Wsa Allotment
 Plugin URI:  https://github.com/bramwaas/wordpress-plugin-wsaallotment
 Description: Wordpress plugin for management of allotment entities. Designed for Volkstuinvereniging Linnaeus.
-Version:     0.1
+Version:     0.2.0
 Author:      Bram Waasdorp
 Author URI:  https://www.waasdorpsoekhan.nl/
 License:     GPL2
@@ -87,7 +87,6 @@ final class WsaAllotment_Plugin {
 	 */
 	private function includes() {
 		// Load class files. for general use
-//		require_once( $this->dir . 'inc/class-capability.php' );
 		// Load includes files.
 		require_once( $this->dir . 'inc/function-shortcodes.php'                     );
 		require_once( $this->dir . 'inc/function-database.php'                       );
@@ -100,13 +99,7 @@ final class WsaAllotment_Plugin {
 			// Plugin settings.
 //			require_once( $this->dir . 'admin/class-settings.php' );
 			// CRUD on gardener and allotment
-//			require_once( $this->dir . 'admin/gardeners-list.php');
-//			require_once( $this->dir . 'admin/gardener-create.php');
-//			require_once( $this->dir . 'admin/gardener-update.php');
-//			require_once( $this->dir . 'admin/allotments-list.php');
 		    require_once( $this->dir . 'admin/allotment-crud.php');
-//			require_once( $this->dir . 'admin/allotment-update.php');
-			
 		}
 	}
 	
