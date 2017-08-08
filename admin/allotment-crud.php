@@ -412,3 +412,200 @@ else {echo '<div class="wrap">';
 _e('User is not authorised for this function','wsaallotment');
 echo '</div>';}
 } 
+/**
+ * Crud menu on section
+ *
+ * @since  0.2.0
+ * @access public
+ * @return void
+ */
+function wsaallotment_sections_list() {
+	?>
+    <link type="text/css" href="<?php echo plugin_dir_url(  __FILE__ ) . 'css/style-admin.css' ?>" rel="stylesheet" />
+    <div class="wrap">
+         <h2><?php _e('Sections', 'wsaallotment'); ?></h2>
+        <div class="tablenav top">
+            <div class="alignleft actions">
+                <a href="<?php echo admin_url('admin.php?page=wsaallotment_section_create'); ?>" title="<?php _e('Add new section', 'wsaallotment'); ?>" ><?php _e('Add new section', 'wsaallotment'); ?></a>
+            </div>
+            <br class="clear">
+        </div>
+        <?php
+        global $wpdb;
+        $table_name = $wpdb->prefix . "section";
+    	$fields = wsaallotment_section_fields ();
+		$labels = wsaallotment_section_labels ();
+        $select_list = implode(", ", array_keys($fields)) . ', section_id ';
+        $rows = $wpdb->get_results("SELECT $select_list from $table_name");
+         ?>
+        <table class='table table-striped wp-list-table widefat fixed striped posts'>
+            <thead>
+            <tr>
+	    <?php foreach ($fields as $field => $value) { ?>	    
+                <th class="manage-column ss-list-width"><?php echo $labels[$field]; ?></th>
+		<?php 	}  ?>    
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($rows as $row) { 
+            	$fields = (array) $row;
+            	?>
+                <tr>
+		<?php foreach ($fields as $field => $value) { 
+		 	if ($field !== 'section_id'){ 
+				if ($field === 'section_name'){ ?>
+                    	<td class="manage-column ss-list-width"><a 	title="<?php _e('Update section', 'wsaallotment'); ?>" href="<?php
+     echo admin_url('admin.php?page=wsaallotment_section_update&section_id=' . $fields['section_id']); 
+				?>"><?php
+	  echo $fields['section_name'];
+	  			?></a></td>
+	              <?php } 	else { ?>
+                    <td class="manage-column ss-list-width"><?php echo $value; ?></td>
+ 		        <?php 	} 
+			  }
+         		} ?>		
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+    </div>
+    <?php
+}
+/**
+ * Admin update view on section
+ *
+ * @since  0.2.0
+ * @access public
+ * @return void
+ */
+function wsaallotment_section_update() {
+	if (current_user_can('member_administration'   )) {
+		
+		global $wpdb;
+		//update
+		$table_name = $wpdb->prefix . "section";
+		$fields = wsaallotment_section_fields ();
+		$labels = wsaallotment_section_labels ();
+		$select_list = implode(", ", array_keys($fields));
+		if (isset($_GET['section_id'])) {
+			$section_id= $_GET['section_id'];
+			if (isset($_POST['update'])) {
+				foreach($_POST as $field => $value) {
+					if ($field=='update') {}
+					else {$fields[$field] = ($value > ' ') ? $value : null;}
+				}
+				$wpdb->update(
+						$table_name, //table
+						$fields, //data
+						array('section_id' => $section_id), //where
+						array('%s'), //data format
+						array('%s') //where format
+						);
+				if (! isset($message)) { $message = __('Section updated', 'wsaallotment');}
+			}
+			//delete
+			else if (isset($_POST['delete'])) {
+				$sql= $wpdb->prepare("DELETE FROM $table_name WHERE section_id = %s", $section_id);
+				$wpdb->query($sql);
+				unset($fields);
+				if (! isset($message)) { $message = __('Section deleted', 'wsaallotment');}
+			} else {//selecting row to update
+				$sql = $wpdb->prepare("SELECT $select_list FROM $table_name WHERE section_id=%s", $section_id);
+				$fields = $wpdb->get_row($sql, ARRAY_A);
+				
+			}
+		} // end  if (isset($_GET['section_id']))
+		else {
+			if (isset($message))  { $message .= ' ' . __('Id missing', 'wsaallotment');}
+			else { $message = __('Id missing', 'wsaallotment');}
+			
+		}
+		?>
+   <link type="text/css" href="<?php echo plugin_dir_url(  __FILE__ ). 'css/style-admin.css' ?>" rel="stylesheet" />
+    <div class="wrap">
+         <h2><?php _e('Section', 'wsaallotment'); ?></h2>
+        <?php if (isset($message)): ?><div class="updated"><p><?php echo $message; ?></p></div>
+                  <a href="<?php echo admin_url('admin.php?page=wsaallotment_sections_list') ?>">&laquo; <?php _e('Back to the sections list', 'wsaallotment'); ?></a>
+        <?php endif; ?>
+
+        <?php if (isset($fields)) { ?>
+            <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
+             <table class="table wp-list-table widefat fixed">
+        	<?php
+        	foreach($fields as $field => $value) { ?>
+               <tr>
+                    <th scope="row" class="ss-th-width"><?php echo $labels[$field]; ?></th>
+                    <td><input type="text" name="<?php echo $field; ?>" value="<?php echo $value; ?>" class="ss-field-width" /></td>
+                </tr>
+        		
+        	<?php	
+        	}
+        	?>
+            </table>
+                <input type='submit' name="update" value='<?php _e('Save', 'wsaallotment'); ?>' title="<?php _e('Update section', 'wsaallotment'); ?>" class='button'> &nbsp;&nbsp;
+                <input type='submit' name="delete" value='<?php _e('Delete', 'wsaallotment'); ?>' title="<?php _e('Delete section', 'wsaallotment'); ?>" class='button' onclick="return confirm('<?php _e('Delete this section?','wsaallotment')?>')">
+            </form>
+        <?php } ?>
+
+    </div>
+    <?php
+}
+else {echo '<div class="wrap">';
+    _e('User is not authorised for this function','wsaallotment');
+     echo '</div>';}
+}   
+/**
+ * Admin create view on section
+ *
+ * @since  0.2.0
+ * @access public
+ * @return void
+ */
+function wsaallotment_section_create() {
+	if (current_user_can('member_administration'   )) {
+		
+		//insert
+		global $wpdb;
+		$table_name = $wpdb->prefix . "section";
+		$fields = wsaallotment_section_fields ();
+		$labels = wsaallotment_section_labels ();
+		if (isset($_POST['insert'])) {
+			foreach($_POST as $field => $value) {
+				if ($field=='insert') {}
+				else {$fields[$field] = ($value > ' ') ? $value : null;}
+			}
+			$wpdb->insert(
+					$table_name, //table
+					$fields //data
+					);
+			if (! isset($message)) { $message= __('Section inserted', 'wsaallotment');}
+		}
+		?>
+    <link type="text/css" href="<?php echo plugin_dir_url(  __FILE__ ). '../css/style-admin.css' ?>" rel="stylesheet" />
+    <div class="wrap">
+        <h2><?php _e('Add new section', 'wsaallotment'); ?></h2>
+        <?php if (isset($message)): ?><div class="updated"><p><?php echo $message; ?></p></div>
+                  <a href="<?php echo admin_url('admin.php?page=wsaallotment_sections_list') ?>">&laquo; <?php _e('Back to the sections list', 'wsaallotment'); ?></a>
+        <?php endif; ?>
+        <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
+             <table class="table wp-list-table widefat fixed">
+        	<?php
+        	foreach($fields as $field => $value) { ?>
+               <tr>
+                    <th scope="row" class="ss-th-width"><?php echo $labels[$field]; ?></th>
+                    <td><input type="text" name="<?php echo $field; ?>" value="<?php echo $value; ?>" class="ss-field-width" /></td>
+                </tr>
+        		
+        	<?php	
+        	}
+        	?>
+            </table>
+            <input type='submit' name="insert" value='<?php _e('Save', 'wsaallotment'); ?>' title="<?php _e('Save section', 'wsaallotment'); ?>" class='button'>
+        </form>
+    </div>
+    <?php
+}
+else {echo '<div class="wrap">';
+_e('User is not authorised for this function','wsaallotment');
+echo '</div>';}
+} 
