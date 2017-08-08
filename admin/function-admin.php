@@ -34,6 +34,13 @@ function wsaallotment_gardeners_modifymenu() {
 			'wsaallotment_gardeners_list', //menu slug
 			'wsaallotment_gardeners_list' //function
 			);
+	add_submenu_page('wsaallotment_allotments_list', //parent slug
+			__('Sections', 'wsaallotment'), //page title
+ 			__('Sections', 'wsaallotment'), //menu title
+			'member_administration', //capabilities
+			'wsaallotment_sections_list', //menu slug
+			'wsaallotment_sections_list' //function
+			);
 	
 	//this is a submenu
 	add_submenu_page('wsaallotment_allotments_list', //parent slug
@@ -65,6 +72,21 @@ function wsaallotment_gardeners_modifymenu() {
 					'member_administration', //capability
 					'wsaallotment_gardener_update', //menu slug
 					'wsaallotment_gardener_update'); //function
+	//this is a submenu
+	add_submenu_page('wsaallotment_allotments_list', //parent slug
+					__('Add new section', 'wsaallotment'), //page title
+					__('Add new section', 'wsaallotment'), //menu title
+					'member_administration', //capability
+					'wsaallotment_section_create', //menu slug
+					'wsaallotment_section_create'); //function
+					
+	//this submenu is HIDDEN, however, we need to add it anyways
+	add_submenu_page(null, //parent slug
+					__('Update section', 'wsaallotment'), //page title
+			__('Update', 'wsaallotment'), //menu titlemanage_options
+					'member_administration', //capability
+					'wsaallotment_section_update', //menu slug
+					'wsaallotment_section_update'); //function
 							
 			add_submenu_page('wsaallotment_allotments_list', //parent slug
 					__('Info', 'wsaallotment'), //page title
