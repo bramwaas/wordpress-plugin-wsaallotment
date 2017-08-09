@@ -435,7 +435,7 @@ function wsaallotment_sections_list() {
         $table_name = $wpdb->prefix . "section";
     	$fields = wsaallotment_section_fields ();
 		$labels = wsaallotment_section_labels ();
-        $select_list = implode(", ", array_keys($fields)) . ', section_id ';
+        $select_list = implode(", ", array_keys($fields)) ;
         $rows = $wpdb->get_results("SELECT $select_list from $table_name");
          ?>
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
@@ -452,7 +452,7 @@ function wsaallotment_sections_list() {
             	?>
                 <tr>
 		<?php foreach ($fields as $field => $value) { 
-		 	if ($field !== 'section_id'){ 
+		 	
 				if ($field === 'section_name'){ ?>
                     	<td class="manage-column ss-list-width"><a 	title="<?php _e('Update section', 'wsaallotment'); ?>" href="<?php
      echo admin_url('admin.php?page=wsaallotment_section_update&section_id=' . $fields['section_id']); 
@@ -462,7 +462,7 @@ function wsaallotment_sections_list() {
 	              <?php } 	else { ?>
                     <td class="manage-column ss-list-width"><?php echo $value; ?></td>
  		        <?php 	} 
-			  }
+			  
          		} ?>		
                 </tr>
             <?php } ?>

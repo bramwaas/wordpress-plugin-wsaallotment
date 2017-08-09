@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-06 13:40+0000\n"
+"POT-Creation-Date: 2017-08-09 07:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,72 +14,77 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: wsaallotment.php:160
+#: wsaallotment.php:153
 msgid "Member Administration"
 msgstr ""
 
-#: wsaallotment.php:221 wsaallotment.php:231
+#: wsaallotment.php:214 wsaallotment.php:224
 msgid "Whoah, partner!"
 msgstr ""
 
-#: inc/function-database.php:118 inc/function-database.php:157
+#: inc/function-database.php:130 inc/function-database.php:198
 msgid "Id"
 msgstr ""
 
-#: inc/function-database.php:119
+#: inc/function-database.php:131
 msgid "Login"
 msgstr ""
 
-#: inc/function-database.php:120
+#: inc/function-database.php:132
 msgid "Email"
 msgstr ""
 
-#: inc/function-database.php:121
+#: inc/function-database.php:133
 msgid "Initials"
 msgstr ""
 
-#: inc/function-database.php:122
+#: inc/function-database.php:134
 msgid "Infix"
 msgstr ""
 
-#: inc/function-database.php:123
+#: inc/function-database.php:135
 msgid "Last name"
 msgstr ""
 
-#: inc/function-database.php:124
+#: inc/function-database.php:136
 msgid "First name"
 msgstr ""
 
-#: inc/function-database.php:125 inc/function-database.php:158
+#: inc/function-database.php:137 inc/function-database.php:165
+#: inc/function-database.php:199 admin/allotment-crud.php:526
 msgid "Section"
 msgstr ""
 
-#: inc/function-database.php:126 inc/function-database.php:159
+#: inc/function-database.php:138 inc/function-database.php:200
 msgid "Nr"
 msgstr ""
 
-#: inc/function-database.php:160
-msgid "Contribution"
+#: inc/function-database.php:166
+msgid "Section name"
 msgstr ""
 
-#: inc/function-database.php:161
-msgid "Insurance"
-msgstr ""
-
-#: inc/function-database.php:162
-msgid "Insured"
-msgstr ""
-
-#: inc/function-database.php:163
+#: inc/function-database.php:167 inc/function-database.php:204
 msgid "Description"
 msgstr ""
 
-#: inc/function-shortcodes.php:136
+#: inc/function-database.php:201
+msgid "Contribution"
+msgstr ""
+
+#: inc/function-database.php:202
+msgid "Insurance"
+msgstr ""
+
+#: inc/function-database.php:203
+msgid "Insured"
+msgstr ""
+
+#: inc/function-shortcodes.php:146
 #, php-format
 msgid "User %1$s is not connected to a gardener"
 msgstr ""
 
-#: inc/function-shortcodes.php:180
+#: inc/function-shortcodes.php:190
 #, php-format
 msgid "User %1$s is not connected to an allotment"
 msgstr ""
@@ -93,14 +98,14 @@ msgstr ""
 #. parent slug
 #. page title
 #: admin/allotment-crud.php:26 admin/allotment-crud.php:26
-#: admin/allotment-crud.php:191 admin/function-admin.php:40
-#: admin/function-admin.php:41
+#: admin/allotment-crud.php:191 admin/function-admin.php:47
+#: admin/function-admin.php:48
 msgid "Add new allotment"
 msgstr ""
 
 #. parent slug
 #: admin/allotment-crud.php:54 admin/allotment-crud.php:148
-#: admin/function-admin.php:48
+#: admin/function-admin.php:55
 msgid "Update allotment"
 msgstr ""
 
@@ -114,6 +119,7 @@ msgstr ""
 
 #: admin/allotment-crud.php:122 admin/allotment-crud.php:123
 #: admin/allotment-crud.php:321 admin/allotment-crud.php:322
+#: admin/allotment-crud.php:519 admin/allotment-crud.php:520
 msgid "Id missing"
 msgstr ""
 
@@ -127,10 +133,12 @@ msgstr ""
 
 #: admin/allotment-crud.php:148 admin/allotment-crud.php:208
 #: admin/allotment-crud.php:347 admin/allotment-crud.php:406
+#: admin/allotment-crud.php:545 admin/allotment-crud.php:603
 msgid "Save"
 msgstr ""
 
 #: admin/allotment-crud.php:149 admin/allotment-crud.php:348
+#: admin/allotment-crud.php:546
 msgid "Delete"
 msgstr ""
 
@@ -144,6 +152,7 @@ msgstr ""
 
 #: admin/allotment-crud.php:157 admin/allotment-crud.php:214
 #: admin/allotment-crud.php:356 admin/allotment-crud.php:412
+#: admin/allotment-crud.php:554 admin/allotment-crud.php:609
 msgid "User is not authorised for this function"
 msgstr ""
 
@@ -165,13 +174,13 @@ msgid "Gardeners"
 msgstr ""
 
 #: admin/allotment-crud.php:231 admin/allotment-crud.php:231
-#: admin/allotment-crud.php:389 admin/function-admin.php:55
-#: admin/function-admin.php:56
+#: admin/allotment-crud.php:389 admin/function-admin.php:62
+#: admin/function-admin.php:63
 msgid "Add new gardener"
 msgstr ""
 
 #: admin/allotment-crud.php:259 admin/allotment-crud.php:347
-#: admin/function-admin.php:63
+#: admin/function-admin.php:70
 msgid "Update gardener"
 msgstr ""
 
@@ -207,9 +216,168 @@ msgstr ""
 msgid "Save gardener"
 msgstr ""
 
+#. parent slug
 #. page title
-#: admin/function-admin.php:49 admin/function-admin.php:64
+#: admin/allotment-crud.php:426 admin/function-admin.php:38
+#: admin/function-admin.php:39
+msgid "Sections"
+msgstr ""
+
+#. parent slug
+#. page title
+#: admin/allotment-crud.php:429 admin/allotment-crud.php:429
+#: admin/allotment-crud.php:586 admin/function-admin.php:77
+#: admin/function-admin.php:78
+msgid "Add new section"
+msgstr ""
+
+#. parent slug
+#: admin/allotment-crud.php:457 admin/allotment-crud.php:545
+#: admin/function-admin.php:85
+msgid "Update section"
+msgstr ""
+
+#: admin/allotment-crud.php:504
+msgid "Section updated"
+msgstr ""
+
+#: admin/allotment-crud.php:511
+msgid "Section deleted"
+msgstr ""
+
+#: admin/allotment-crud.php:528 admin/allotment-crud.php:588
+msgid "Back to the sections list"
+msgstr ""
+
+#: admin/allotment-crud.php:546
+msgid "Delete section"
+msgstr ""
+
+#: admin/allotment-crud.php:546
+msgid "Delete this section?"
+msgstr ""
+
+#: admin/allotment-crud.php:581
+msgid "Section inserted"
+msgstr ""
+
+#: admin/allotment-crud.php:603
+msgid "Save section"
+msgstr ""
+
+#. page title
+#: admin/function-admin.php:56 admin/function-admin.php:71
+#: admin/function-admin.php:86
 msgid "Update"
+msgstr ""
+
+#. parent slug
+#. page title
+#: admin/function-admin.php:92 admin/function-admin.php:93
+msgid "Info"
+msgstr ""
+
+#: admin/function-admin.php:102
+msgid "<h2>Info</h2><p>"
+msgstr ""
+
+#: admin/function-admin.php:104
+msgid "<strong>Af te sluiten shortcodes.</strong></p><p>"
+msgstr ""
+
+#: admin/function-admin.php:106
+msgid "Formaat: [shortcode]...te bewerken tekst ...[/shortcode]</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:108
+msgid ""
+"De tekst tussen de beginshortcode [shortcode] en de eindshortcode "
+"[/shortcode] wordt bewerkt. In deze plugin wordt de inhoud al of niet "
+"getoond.</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:110 admin/function-admin.php:134
+msgid "<strong>Voorbeelden:</strong></p><p>"
+msgstr ""
+
+#: admin/function-admin.php:112
+msgid "<strong>is_gardener:</strong></p><p>"
+msgstr ""
+
+#: admin/function-admin.php:114
+msgid ""
+"[is_gardener]toont deze info als gebruiker een tuinder is[/is_gardener]</p>"
+"<p>"
+msgstr ""
+
+#: admin/function-admin.php:116
+msgid "<strong>not_gardener</strong>:</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:118
+msgid ""
+"[not_gardener]toont deze info als gebruiker een tuinder is, of niet "
+"ingelogd[/not_gardener]</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:120
+msgid "<strong>has_allotment</strong>:</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:122
+msgid ""
+"[has_allotment]toont deze info als gebruiker een tuinder is en een tuintje "
+"heeft[/has_allotment]</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:124
+msgid "<strong>not_allotment</strong>:</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:126
+msgid ""
+"[not_allotment]toont deze info als gebruiker niet een tuinder is of geen "
+"tuintje heeft[/not_allotment]</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:128
+msgid "<strong>Eenvoudige shortcodes.</strong></p><p>"
+msgstr ""
+
+#: admin/function-admin.php:130
+msgid "Formaat [shortcode]</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:132
+msgid "de shortcode wordt vervangen door een inhoud.</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:136
+msgid "<strong>view_gardener,</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:137
+msgid ""
+"</strong>toont de gegevens die wij van deze tuinder hebben geadministreerd:"
+"</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:139
+msgid "[view_gardener]</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:141
+msgid "<strong>view_allotment,</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:142
+msgid ""
+"</strong>toont de gegevens die wij van de volkstuin van deze tuinder hebben "
+"geadministreerd:</p><p>"
+msgstr ""
+
+#: admin/function-admin.php:143
+msgid "[view_allotment]</p><p>"
 msgstr ""
 
 #. Name of the plugin

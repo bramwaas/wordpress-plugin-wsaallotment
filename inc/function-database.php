@@ -149,7 +149,7 @@ function wsaallotment_gardener_labels () {
  */
 function wsaallotment_section_fields () {
 	return array(
-//			'section_id' => null,
+			'section_id' => null,
 			'section_name' => null,
 			'section_description' => null);
 }
