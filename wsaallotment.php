@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) or die;
  */
 final class WsaAllotment_Plugin {
 	/**
-	 * Minimum required PHP version.
+	 * Plugin directory
 	 *
 	 * @since  0.1.0
 	 * @access public
@@ -90,7 +90,7 @@ final class WsaAllotment_Plugin {
 function wsaallotment_update_version_check() {
 	$wsaallotment_version = '0.2.0';
 	if ( get_site_option( 'wsaallotment_version' ) != $wsaallotment_version) {
-		update_option( 'wsaallotment_db_version', $wsaallotment_version );
+		update_option( 'wsaallotment_version', $wsaallotment_version );
 	}
 }
 	/**
@@ -147,7 +147,6 @@ function wsaallotment_update_version_check() {
 		add_action('plugins_loaded', array($this, 'wsaallotment_member_admin_role'));
 		// CRUD actions in admin-menu
 		add_action('admin_menu','wsaallotment_gardeners_modifymenu');
-//		add_action('admin_menu','wsaallotment_allotments_modifymenu');
 		// Register activation hook.
 		register_activation_hook( __FILE__, array( $this, 'activation' ) );
 		// uninstall via uninstall.php
