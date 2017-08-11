@@ -142,7 +142,7 @@ function wsaallotment_update_version_check() {
 		add_action( 'plugins_loaded', array( $this, 'i18n' ), 2 );
 		// Add dbcheck and plugin version check.
 		add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
-		add_action( 'plugins_loaded', 'wsaallotment_update_version_check');
+		add_action( 'plugins_loaded', array($this,'wsaallotment_update_version_check'));
 		// add the wsaallotment_memberadministration_role
 		add_action('plugins_loaded', array($this, 'wsaallotment_member_admin_role'));
 		// CRUD actions in admin-menu
