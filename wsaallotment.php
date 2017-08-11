@@ -24,7 +24,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see https://www.gnu.org/licenses/gpl-2.0.html
 * @package   wsa allotment
-* @version   0.1.0
+* @version   0.2.0
 * @author    Bram Waasdorp <bram@waasdorpsoekhan.nl>
 * @copyright Copyright (c) 2017, Bram Waasdorp
 * @link      http://www.waasdorpsoekhan.nl/wsaallotment
@@ -78,6 +78,21 @@ final class WsaAllotment_Plugin {
 		$this->uri =  plugin_dir_url(  __FILE__ ); 
 	}
 
+}
+/**
+ * Check on current  version . 
+ * Update if not equal.
+ *
+ * @since  0.2.0
+ * @access public
+ * @return void
+ */
+function wsaallotment_update_version_check() {
+	$wsaallotment_version = '0.2.0';
+	if ( get_site_option( 'wsaallotment_version' ) != $wsaallotment_version) {
+		update_option( 'wsaallotment_db_version', $wsaallotment_version );
+	}
+}
 	/**
 	 * Loads files needed by the plugin.
 	 *
@@ -125,8 +140,9 @@ final class WsaAllotment_Plugin {
 	private function setup_actions() {
 		// Internationalize the text strings used.
 		add_action( 'plugins_loaded', array( $this, 'i18n' ), 2 );
-		// Add dbcheck.
+		// Add dbcheck and plugin version check.
 		add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
+		add_action( 'plugins_loaded', 'wsaallotment_update_version_check');
 		// add the wsaallotment_memberadministration_role
 		add_action('plugins_loaded', array($this, 'wsaallotment_member_admin_role'));
 		// CRUD actions in admin-menu
@@ -203,8 +219,7 @@ final class WsaAllotment_Plugin {
 		return 'Wsa Allotment';
 	}
 	/**
-	 * Magic method to keep the object from bein		add_action('plugins_loaded', array($this, 'test'));
-g cloned.
+	 * Magic method to keep the object from being cloned.
 	 *
 	 * @since  0.1.0
 	 * @access public
