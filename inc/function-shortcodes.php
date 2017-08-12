@@ -9,8 +9,6 @@
  * @link       https://github.com/bramwaas/wordpress-plugin-wsaallotment
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-# Add shortcodes.
-add_action( 'init', 'wsaallotment_register_shortcodes' );
 /**
  * Registers shortcodes.
  *

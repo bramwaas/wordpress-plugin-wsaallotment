@@ -78,7 +78,7 @@ final class WsaAllotment_Plugin {
 		$this->uri =  plugin_dir_url(  __FILE__ ); 
 	}
 
-}
+
 /**
  * Check on current  version . 
  * Update if not equal.
@@ -89,6 +89,7 @@ final class WsaAllotment_Plugin {
  */
 function wsaallotment_update_version_check() {
 	$wsaallotment_version = '0.2.0';
+	wsaallotment_update_db_check();
 	if ( get_site_option( 'wsaallotment_version' ) != $wsaallotment_version) {
 		update_option( 'wsaallotment_version', $wsaallotment_version );
 	}
@@ -138,15 +139,16 @@ function wsaallotment_update_version_check() {
 	 * @return void
 	 */
 	private function setup_actions() {
+		// Add shortcodes.
+		add_action( 'init', 'wsaallotment_register_shortcodes' );
 		// Internationalize the text strings used.
 		add_action( 'plugins_loaded', array( $this, 'i18n' ), 2 );
 		// Add dbcheck and plugin version check.
-		add_action( 'plugins_loaded', 'wsaallotment_update_db_check' );
 		add_action( 'plugins_loaded', array($this,'wsaallotment_update_version_check'));
 		// add the wsaallotment_memberadministration_role
 		add_action('plugins_loaded', array($this, 'wsaallotment_member_admin_role'));
 		// CRUD actions in admin-menu
-		add_action('admin_menu','wsaallotment_gardeners_modifymenu');
+		add_action('admin_menu','wsaallotment_admin_modifymenu');
 		// Register activation hook.
 		register_activation_hook( __FILE__, array( $this, 'activation' ) );
 		// uninstall via uninstall.php
@@ -162,6 +164,13 @@ function wsaallotment_update_version_check() {
 		load_plugin_textdomain( 'wsaallotment', false, trailingslashit( dirname( plugin_basename( __FILE__ ) ) ) . 'language' );
 	}
 	
+	/**
+	 * Adds Roles for this plugin
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @return void
+	 */
 	public function wsaallotment_member_admin_role() {
 		add_role(
 				'wsaallotment_member_administration',

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Wsa Allotment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-09 07:11+0000\n"
-"PO-Revision-Date: 2017-08-09 07:14+0000\n"
+"POT-Creation-Date: 2017-08-12 13:21+0000\n"
+"PO-Revision-Date: 2017-08-12 13:36+0000\n"
 "Last-Translator: Bram Waasdorp <bram@waasdorpsoekhan.nl>\n"
 "Language-Team: Dutch\n"
 "Language: nl-NL\n"
@@ -13,173 +13,99 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: inc/function-database.php:166
-msgid "Section name"
-msgstr "Vak naam"
-
-#. parent slug
-#. page title
-#: admin/allotment-crud.php:426 admin/function-admin.php:38
-#: admin/function-admin.php:39
-msgid "Sections"
-msgstr "Vakken"
-
-#. parent slug
-#. page title
-#: admin/allotment-crud.php:429 admin/allotment-crud.php:429
-#: admin/allotment-crud.php:586 admin/function-admin.php:77
-#: admin/function-admin.php:78
-msgid "Add new section"
-msgstr "Voeg nieuw vak toe"
-
-#. parent slug
-#: admin/allotment-crud.php:457 admin/allotment-crud.php:545
-#: admin/function-admin.php:85
-msgid "Update section"
-msgstr "Aanpassen vak"
-
-#: admin/allotment-crud.php:504
-msgid "Section updated"
-msgstr "Vak aangepast"
-
-#: admin/allotment-crud.php:511
-msgid "Section deleted"
-msgstr "Vak verwijderd"
-
-#: admin/allotment-crud.php:528 admin/allotment-crud.php:588
-msgid "Back to the sections list"
-msgstr "Terug naar de lijst vakken"
-
-#: admin/allotment-crud.php:546
-msgid "Delete section"
-msgstr "Verwijder vak"
-
-#: admin/allotment-crud.php:546
-msgid "Delete this section?"
-msgstr "Verwijder dit vak?"
-
-#: admin/allotment-crud.php:581
-msgid "Section inserted"
-msgstr "Vak toegevoegd"
-
-#: admin/allotment-crud.php:603
-msgid "Save section"
-msgstr "Vak opslaan"
-
-#. parent slug
-#. page title
-#: admin/function-admin.php:92 admin/function-admin.php:93
-msgid "Info"
-msgstr "Informatie"
-
-#: admin/function-admin.php:102
-msgid "<h2>Info</h2><p>"
-msgstr "<h2>Informatie</h2><p>"
-
 #: admin/function-admin.php:104
-msgid "<strong>Af te sluiten shortcodes.</strong></p><p>"
-msgstr ""
+msgid "<strong>Closed shortcodes.</strong></p><p>"
+msgstr "<strong>Gesloten shortcodes.</strong></p><p>"
 
 #: admin/function-admin.php:106
-msgid "Formaat: [shortcode]...te bewerken tekst ...[/shortcode]</p><p>"
-msgstr ""
+msgid "Format: [shortcode]...text to be edited ...[/shortcode]</p><p>"
+msgstr "Formaat: [shortcode]..aan te passen tekst...[/shortcode]</p><p>"
 
 #: admin/function-admin.php:108
 msgid ""
-"De tekst tussen de beginshortcode [shortcode] en de eindshortcode "
-"[/shortcode] wordt bewerkt. In deze plugin wordt de inhoud al of niet "
-"getoond.</p><p>"
+"The text between the startshortcode [shortcode] and the endshortcode "
+"[/shortcode] wil be edited. In this plugin the content is visble or not.</p>"
+"<p>"
 msgstr ""
+"De tekst tussen de beginshortcode [shortcode] en de eindshortcode "
+"[/shortcode] wordt aangepast. In deze plugin is de tekst zichtbaar of "
+"onzichtbaar.</p><p>"
 
 #: admin/function-admin.php:110 admin/function-admin.php:134
-msgid "<strong>Voorbeelden:</strong></p><p>"
-msgstr ""
-
-#: admin/function-admin.php:112
-msgid "<strong>is_gardener:</strong></p><p>"
-msgstr ""
+msgid "<strong>Examples:</strong></p><p>"
+msgstr "<strong>Voorbeelden:</strong></p><p>"
 
 #: admin/function-admin.php:114
 msgid ""
-"[is_gardener]toont deze info als gebruiker een tuinder is[/is_gardener]</p>"
-"<p>"
+"[is_gardener]shows this content when user is a gardener[/is_gardener]</p><p>"
 msgstr ""
-
-#: admin/function-admin.php:116
-msgid "<strong>not_gardener</strong>:</p><p>"
-msgstr ""
+"[is_gardener]Toont deze inhoud als de gebruiker een tuinder is[/is_gardener]"
+"</p><p>"
 
 #: admin/function-admin.php:118
 msgid ""
-"[not_gardener]toont deze info als gebruiker een tuinder is, of niet "
-"ingelogd[/not_gardener]</p><p>"
+"[not_gardener]shows this content when user is not a gardener or is not "
+"logged in[/not_gardener]</p><p>"
 msgstr ""
-
-#: admin/function-admin.php:120
-msgid "<strong>has_allotment</strong>:</p><p>"
-msgstr ""
+"[not_gardener]Toont deze inhoud als de gebruiker geen tuinder is of niet is "
+"ingelogd.[/not_gardener]</p><p>"
 
 #: admin/function-admin.php:122
 msgid ""
-"[has_allotment]toont deze info als gebruiker een tuinder is en een tuintje "
-"heeft[/has_allotment]</p><p>"
+"[has_allotment]shows this content when user is a gardener and has an "
+"allotment[/has_allotment]</p><p>"
 msgstr ""
-
-#: admin/function-admin.php:124
-msgid "<strong>not_allotment</strong>:</p><p>"
-msgstr ""
+"[has_allotment]Toont deze inhoud als de gebruiker een tuintje heeft."
+"[/has_allotment]</p><p>"
 
 #: admin/function-admin.php:126
 msgid ""
-"[not_allotment]toont deze info als gebruiker niet een tuinder is of geen "
-"tuintje heeft[/not_allotment]</p><p>"
+"[not_allotment]shows this content when user has not an allotment, is not a "
+"gardener or is not logged in[/not_allotment]</p><p>"
 msgstr ""
+"[not_allotment]Toont deze inhoud als gebruiker geen tuintje heeft of niet is "
+"ingelogd.[/not_allotment]</p><p>"
 
 #: admin/function-admin.php:128
-msgid "<strong>Eenvoudige shortcodes.</strong></p><p>"
-msgstr ""
+msgid "<strong>Open (simple)  shortcodes.</strong></p><p>"
+msgstr "<strong>Open (eenvoudige)  shortcodes.</strong></p><p>"
 
 #: admin/function-admin.php:130
-msgid "Formaat [shortcode]</p><p>"
-msgstr ""
+msgid "Format: [shortcode]</p><p>"
+msgstr "Formaat: [shortcode]</p><p>"
 
 #: admin/function-admin.php:132
-msgid "de shortcode wordt vervangen door een inhoud.</p><p>"
-msgstr ""
+msgid "The shortcode is replaced by content from plugin.</p><p>"
+msgstr "De shortcode wordt vervangen door inhoud vanuit de plugin.</p><p>"
 
 #: admin/function-admin.php:136
 msgid "<strong>view_gardener,</p><p>"
-msgstr ""
+msgstr "<strong>view_gardener,</p><p>"
 
 #: admin/function-admin.php:137
 msgid ""
-"</strong>toont de gegevens die wij van deze tuinder hebben geadministreerd:"
+"</strong>Shows a view on the gardener information we have about this user:"
 "</p><p>"
 msgstr ""
-
-#: admin/function-admin.php:139
-msgid "[view_gardener]</p><p>"
-msgstr ""
+"</strong>Toont de tuinder-informatie die we hebben van deze gebruiker:</p><p>"
 
 #: admin/function-admin.php:141
 msgid "<strong>view_allotment,</p><p>"
-msgstr ""
+msgstr "<strong>view_allotment,</p><p>"
 
 #: admin/function-admin.php:142
 msgid ""
-"</strong>toont de gegevens die wij van de volkstuin van deze tuinder hebben "
-"geadministreerd:</p><p>"
+"</strong>Shows a view on the alottment information we have about this user:"
+"</p><p>"
 msgstr ""
+"</strong>Toont de volkstuin-informatie die we hebben bij deze gebruiker:</p>"
+"<p>"
 
-#: admin/function-admin.php:143
-msgid "[view_allotment]</p><p>"
-msgstr ""
-
-#: wsaallotment.php:153
+#: wsaallotment.php:177
 msgid "Member Administration"
 msgstr "Ledenadministratie"
 
-#: wsaallotment.php:214 wsaallotment.php:224
+#: wsaallotment.php:237 wsaallotment.php:247
 msgid "Whoah, partner!"
 msgstr "Whoah, partner!"
 
@@ -220,6 +146,10 @@ msgstr "Vak"
 msgid "Nr"
 msgstr "Nr"
 
+#: inc/function-database.php:166
+msgid "Section name"
+msgstr "Vak naam"
+
 #: inc/function-database.php:167 inc/function-database.php:204
 msgid "Description"
 msgstr "Omschrijving"
@@ -236,12 +166,12 @@ msgstr "Verzekering"
 msgid "Insured"
 msgstr "Verzekerd"
 
-#: inc/function-shortcodes.php:146
+#: inc/function-shortcodes.php:144
 #, php-format
 msgid "User %1$s is not connected to a gardener"
 msgstr "Gebruiker %1$s is niet verbonden met een tuinder"
 
-#: inc/function-shortcodes.php:190
+#: inc/function-shortcodes.php:188
 #, php-format
 msgid "User %1$s is not connected to an allotment"
 msgstr "Gebruiker %1$s is niet verbonden met een volkstuintje"
@@ -373,11 +303,70 @@ msgstr "Tuinder toegevoegd"
 msgid "Save gardener"
 msgstr "Sla tuinder op"
 
+#. parent slug
+#. page title
+#: admin/allotment-crud.php:426 admin/function-admin.php:38
+#: admin/function-admin.php:39
+msgid "Sections"
+msgstr "Vakken"
+
+#. parent slug
+#. page title
+#: admin/allotment-crud.php:429 admin/allotment-crud.php:429
+#: admin/allotment-crud.php:586 admin/function-admin.php:77
+#: admin/function-admin.php:78
+msgid "Add new section"
+msgstr "Voeg nieuw vak toe"
+
+#. parent slug
+#: admin/allotment-crud.php:457 admin/allotment-crud.php:545
+#: admin/function-admin.php:85
+msgid "Update section"
+msgstr "Aanpassen vak"
+
+#: admin/allotment-crud.php:504
+msgid "Section updated"
+msgstr "Vak aangepast"
+
+#: admin/allotment-crud.php:511
+msgid "Section deleted"
+msgstr "Vak verwijderd"
+
+#: admin/allotment-crud.php:528 admin/allotment-crud.php:588
+msgid "Back to the sections list"
+msgstr "Terug naar de lijst vakken"
+
+#: admin/allotment-crud.php:546
+msgid "Delete section"
+msgstr "Verwijder vak"
+
+#: admin/allotment-crud.php:546
+msgid "Delete this section?"
+msgstr "Verwijder dit vak?"
+
+#: admin/allotment-crud.php:581
+msgid "Section inserted"
+msgstr "Vak toegevoegd"
+
+#: admin/allotment-crud.php:603
+msgid "Save section"
+msgstr "Vak opslaan"
+
 #. page title
 #: admin/function-admin.php:56 admin/function-admin.php:71
 #: admin/function-admin.php:86
 msgid "Update"
 msgstr "Aanpassen"
+
+#. parent slug
+#. page title
+#: admin/function-admin.php:92 admin/function-admin.php:93
+msgid "Info"
+msgstr "Informatie"
+
+#: admin/function-admin.php:102
+msgid "<h2>Info</h2><p>"
+msgstr "<h2>Informatie</h2><p>"
 
 #. Name of the plugin
 msgid "Wsa Allotment"

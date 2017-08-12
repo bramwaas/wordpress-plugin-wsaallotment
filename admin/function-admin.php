@@ -18,7 +18,7 @@
  */
 //
 //menu items
-function wsaallotment_gardeners_modifymenu() {
+function wsaallotment_admin_modifymenu() {
 	
 	//this is the main item for the menu
 	add_menu_page(__('Allotments', 'wsaallotment'), //page title
@@ -101,46 +101,46 @@ function wsaallotment_info () {
 	echo('<div class="wrap">');
 	_e('<h2>Info</h2><p>', 'wsaallotment');
 	
-	_e('<strong>Af te sluiten shortcodes.</strong></p><p>', 'wsaallotment');
+	_e('<strong>Closed shortcodes.</strong></p><p>', 'wsaallotment');
 	
-	_e('Formaat: [shortcode]...te bewerken tekst ...[/shortcode]</p><p>', 'wsaallotment');
+	_e('Format: [shortcode]...text to be edited ...[/shortcode]</p><p>', 'wsaallotment');
 	
-	_e('De tekst tussen de beginshortcode [shortcode] en de eindshortcode [/shortcode] wordt bewerkt. In deze plugin wordt de inhoud al of niet getoond.</p><p>', 'wsaallotment');
+	_e('The text between the startshortcode [shortcode] and the endshortcode [/shortcode] wil be edited. In this plugin the content is visble or not.</p><p>', 'wsaallotment');
 	
-	_e('<strong>Voorbeelden:</strong></p><p>', 'wsaallotment');
+	_e('<strong>Examples:</strong></p><p>', 'wsaallotment');
 	
-	_e('<strong>is_gardener:</strong></p><p>', 'wsaallotment');
+	echo ('<strong>is_gardener:</strong></p><p>');
 	
-	_e('[is_gardener]toont deze info als gebruiker een tuinder is[/is_gardener]</p><p>', 'wsaallotment');
+	_e('[is_gardener]shows this content when user is a gardener[/is_gardener]</p><p>', 'wsaallotment');
 	
-	_e('<strong>not_gardener</strong>:</p><p>', 'wsaallotment');
+	echo('<strong>not_gardener</strong>:</p><p>');
 	
-	_e('[not_gardener]toont deze info als gebruiker een tuinder is, of niet ingelogd[/not_gardener]</p><p>', 'wsaallotment');
+	_e('[not_gardener]shows this content when user is not a gardener or is not logged in[/not_gardener]</p><p>', 'wsaallotment');
 	
-	_e('<strong>has_allotment</strong>:</p><p>', 'wsaallotment');
+	echo('<strong>has_allotment</strong>:</p><p>');
 	
-	_e('[has_allotment]toont deze info als gebruiker een tuinder is en een tuintje heeft[/has_allotment]</p><p>', 'wsaallotment');
+	_e('[has_allotment]shows this content when user is a gardener and has an allotment[/has_allotment]</p><p>', 'wsaallotment');
 	
-	_e('<strong>not_allotment</strong>:</p><p>', 'wsaallotment');
+	echo('<strong>not_allotment</strong>:</p><p>');
 	
-	_e('[not_allotment]toont deze info als gebruiker niet een tuinder is of geen tuintje heeft[/not_allotment]</p><p>', 'wsaallotment');
+	_e('[not_allotment]shows this content when user has not an allotment, is not a gardener or is not logged in[/not_allotment]</p><p>', 'wsaallotment');
 	
-	_e('<strong>Eenvoudige shortcodes.</strong></p><p>', 'wsaallotment');
+	_e('<strong>Open (simple)  shortcodes.</strong></p><p>', 'wsaallotment');
 	
-	_e('Formaat [shortcode]</p><p>', 'wsaallotment');
+	_e('Format: [shortcode]</p><p>', 'wsaallotment');
 	
-	_e('de shortcode wordt vervangen door een inhoud.</p><p>', 'wsaallotment');
+	_e('The shortcode is replaced by content from plugin.</p><p>', 'wsaallotment');
 	
-	_e('<strong>Voorbeelden:</strong></p><p>', 'wsaallotment');
+	_e('<strong>Examples:</strong></p><p>', 'wsaallotment');
 	
 	_e('<strong>view_gardener,</p><p>', 'wsaallotment');
-	_e('</strong>toont de gegevens die wij van deze tuinder hebben geadministreerd:</p><p>', 'wsaallotment');
+	_e('</strong>Shows a view on the gardener information we have about this user:</p><p>', 'wsaallotment');
 	
-	_e('[view_gardener]</p><p>', 'wsaallotment');
+	echo('[view_gardener]</p><p>');
 	
 	_e('<strong>view_allotment,</p><p>', 'wsaallotment');
-	_e('</strong>toont de gegevens die wij van de volkstuin van deze tuinder hebben geadministreerd:</p><p>', 'wsaallotment');
-	_e('[view_allotment]</p><p>', 'wsaallotment');
+	_e('</strong>Shows a view on the alottment information we have about this user:</p><p>', 'wsaallotment');
+	echo('[view_allotment]</p><p>');
 
 	echo('</p></div>');
 	

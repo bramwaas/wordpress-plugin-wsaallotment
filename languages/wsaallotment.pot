@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-09 07:11+0000\n"
+"POT-Creation-Date: 2017-08-12 13:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,11 +14,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: wsaallotment.php:153
+#: wsaallotment.php:177
 msgid "Member Administration"
 msgstr ""
 
-#: wsaallotment.php:214 wsaallotment.php:224
+#: wsaallotment.php:237 wsaallotment.php:247
 msgid "Whoah, partner!"
 msgstr ""
 
@@ -79,12 +79,12 @@ msgstr ""
 msgid "Insured"
 msgstr ""
 
-#: inc/function-shortcodes.php:146
+#: inc/function-shortcodes.php:144
 #, php-format
 msgid "User %1$s is not connected to a gardener"
 msgstr ""
 
-#: inc/function-shortcodes.php:190
+#: inc/function-shortcodes.php:188
 #, php-format
 msgid "User %1$s is not connected to an allotment"
 msgstr ""
@@ -282,74 +282,57 @@ msgid "<h2>Info</h2><p>"
 msgstr ""
 
 #: admin/function-admin.php:104
-msgid "<strong>Af te sluiten shortcodes.</strong></p><p>"
+msgid "<strong>Closed shortcodes.</strong></p><p>"
 msgstr ""
 
 #: admin/function-admin.php:106
-msgid "Formaat: [shortcode]...te bewerken tekst ...[/shortcode]</p><p>"
+msgid "Format: [shortcode]...text to be edited ...[/shortcode]</p><p>"
 msgstr ""
 
 #: admin/function-admin.php:108
 msgid ""
-"De tekst tussen de beginshortcode [shortcode] en de eindshortcode "
-"[/shortcode] wordt bewerkt. In deze plugin wordt de inhoud al of niet "
-"getoond.</p><p>"
+"The text between the startshortcode [shortcode] and the endshortcode "
+"[/shortcode] wil be edited. In this plugin the content is visble or not.</p>"
+"<p>"
 msgstr ""
 
 #: admin/function-admin.php:110 admin/function-admin.php:134
-msgid "<strong>Voorbeelden:</strong></p><p>"
-msgstr ""
-
-#: admin/function-admin.php:112
-msgid "<strong>is_gardener:</strong></p><p>"
+msgid "<strong>Examples:</strong></p><p>"
 msgstr ""
 
 #: admin/function-admin.php:114
 msgid ""
-"[is_gardener]toont deze info als gebruiker een tuinder is[/is_gardener]</p>"
-"<p>"
-msgstr ""
-
-#: admin/function-admin.php:116
-msgid "<strong>not_gardener</strong>:</p><p>"
+"[is_gardener]shows this content when user is a gardener[/is_gardener]</p><p>"
 msgstr ""
 
 #: admin/function-admin.php:118
 msgid ""
-"[not_gardener]toont deze info als gebruiker een tuinder is, of niet "
-"ingelogd[/not_gardener]</p><p>"
-msgstr ""
-
-#: admin/function-admin.php:120
-msgid "<strong>has_allotment</strong>:</p><p>"
+"[not_gardener]shows this content when user is not a gardener or is not "
+"logged in[/not_gardener]</p><p>"
 msgstr ""
 
 #: admin/function-admin.php:122
 msgid ""
-"[has_allotment]toont deze info als gebruiker een tuinder is en een tuintje "
-"heeft[/has_allotment]</p><p>"
-msgstr ""
-
-#: admin/function-admin.php:124
-msgid "<strong>not_allotment</strong>:</p><p>"
+"[has_allotment]shows this content when user is a gardener and has an "
+"allotment[/has_allotment]</p><p>"
 msgstr ""
 
 #: admin/function-admin.php:126
 msgid ""
-"[not_allotment]toont deze info als gebruiker niet een tuinder is of geen "
-"tuintje heeft[/not_allotment]</p><p>"
+"[not_allotment]shows this content when user has not an allotment, is not a "
+"gardener or is not logged in[/not_allotment]</p><p>"
 msgstr ""
 
 #: admin/function-admin.php:128
-msgid "<strong>Eenvoudige shortcodes.</strong></p><p>"
+msgid "<strong>Open (simple)  shortcodes.</strong></p><p>"
 msgstr ""
 
 #: admin/function-admin.php:130
-msgid "Formaat [shortcode]</p><p>"
+msgid "Format: [shortcode]</p><p>"
 msgstr ""
 
 #: admin/function-admin.php:132
-msgid "de shortcode wordt vervangen door een inhoud.</p><p>"
+msgid "The shortcode is replaced by content from plugin.</p><p>"
 msgstr ""
 
 #: admin/function-admin.php:136
@@ -358,12 +341,8 @@ msgstr ""
 
 #: admin/function-admin.php:137
 msgid ""
-"</strong>toont de gegevens die wij van deze tuinder hebben geadministreerd:"
+"</strong>Shows a view on the gardener information we have about this user:"
 "</p><p>"
-msgstr ""
-
-#: admin/function-admin.php:139
-msgid "[view_gardener]</p><p>"
 msgstr ""
 
 #: admin/function-admin.php:141
@@ -372,12 +351,8 @@ msgstr ""
 
 #: admin/function-admin.php:142
 msgid ""
-"</strong>toont de gegevens die wij van de volkstuin van deze tuinder hebben "
-"geadministreerd:</p><p>"
-msgstr ""
-
-#: admin/function-admin.php:143
-msgid "[view_allotment]</p><p>"
+"</strong>Shows a view on the alottment information we have about this user:"
+"</p><p>"
 msgstr ""
 
 #. Name of the plugin
