@@ -135,6 +135,7 @@ function wsaallotment_gardener_labels () {
 			'gardener_last_name' => __('Last name' , 'wsaallotment'),
 			'gardener_first_name' => __('First name' , 'wsaallotment'),
 			'allotment_section' => __('Section' , 'wsaallotment'),
+			'section_name' => __('Section' , 'wsaallotment'),
 			'allotment_nr' => __('Nr' , 'wsaallotment')); 
 	
 }
@@ -197,13 +198,17 @@ function wsaallotment_allotment_fields () {
 function wsaallotment_allotment_labels () {
 	return array('allotment_id' => __('Id' , 'wsaallotment'),
 			'allotment_section' => __('Section' , 'wsaallotment'),
+			'section_name' => __('Section' , 'wsaallotment'),
 			'allotment_nr' => __('Nr' , 'wsaallotment'),
 			'allotment_contribution' => __('Contribution' , 'wsaallotment'),
 			'allotment_insurance' => __('Insurance' , 'wsaallotment'),
 			'allotment_insured' => __('Insured' , 'wsaallotment'),
-			'allotment_description' => __('Description' , 'wsaallotment'));
+			'allotment_description' => __('Description' , 'wsaallotment'),
+			'section_description' => (__('Section' , 'wsaallotment') .' ' . __('Description' , 'wsaallotment'))
+	);
 	
 }
+
 /**
  * Single allotment row on user_login
  *
@@ -213,15 +218,19 @@ function wsaallotment_allotment_labels () {
  */
 function wsaallotment_get_allotment_row ($user_login) {
 	global $wpdb;
-	$table_name = $wpdb->prefix . "allotment";
-	$table2_name = $wpdb->prefix . "gardener";
-	$fields = wsaallotment_allotment_fields ();
-	$labels = wsaallotment_allotment_labels ();
-    $select_list = implode(", ", array_keys($fields)) ;
- 	$sql = $wpdb->prepare("SELECT $select_list from $table_name WHERE 
+	$table_name = $wpdb->prefix . 'allotment';
+	$table2_name = $wpdb->prefix . 'gardener';
+	$table3_name = $wpdb->prefix . 'section';
+	$fields = wsaallotment_allotment_labels();
+	unset($fields['allotment_id']);
+	unset($fields['allotment_section']);
+	$select_list = implode(", ", array_keys($fields)) ;
+	$sql = $wpdb->prepare("SELECT $select_list FROM $table_name as t1 
+LEFT OUTER JOIN $table3_name as t3 ON t3.section_id = t1.allotment_section
+WHERE 
 			exists (select * from $table2_name 
-				where $table2_name.allotment_section = $table_name.allotment_section 
-				and $table2_name.allotment_nr = $table_name.allotment_nr 
+				where $table2_name.allotment_section = t1.allotment_section 
+				and $table2_name.allotment_nr = t1.allotment_nr 
 				and $table2_name.user_login=%s)", $user_login);
    	return $wpdb->get_row($sql, ARRAY_A); 
 }
@@ -235,9 +244,33 @@ function wsaallotment_get_allotment_row ($user_login) {
 function wsaallotment_get_gardener_row ($user_login) {
 	global $wpdb;
 	$table_name = $wpdb->prefix . "gardener";
-	$fields = wsaallotment_gardener_fields ();
-	$labels = wsaallotment_gardener_labels ();
+	$table3_name = $wpdb->prefix . 'section';
+	$fields = wsaallotment_gardener_labels();
+	unset($fields['gardener_id']);
+	unset($fields['allotment_section']);
 	$select_list = implode(", ", array_keys($fields)) ;
-	$sql = $wpdb->prepare("SELECT $select_list from $table_name WHERE user_login=%s", $user_login);
+	$sql = $wpdb->prepare("SELECT $select_list from $table_name as t1
+LEFT OUTER JOIN $table3_name as t3 ON t3.section_id = t1.allotment_section
+WHERE user_login=%s", $user_login);
 	return $wpdb->get_row($sql, ARRAY_A);
+}
+/**
+ * Change key in an array to change selectlist and labels when used in query
+ *
+ * @since  0.2.0
+ * @access public
+ * @parameter $array array to change key in
+ * @parameter $old_key string key that must be replaced
+ * @parameter $new_key string key tha replacemes old key
+ * @return array
+ */
+function wsaallotment_change_key( $array, $old_key, $new_key ) {
+	
+	if( ! array_key_exists( $old_key, $array ) )
+		return $array;
+		
+		$keys = array_keys( $array );
+		$keys[ array_search( $old_key, $keys ) ] = $new_key;
+		
+		return array_combine( $keys, $array );
 }
