@@ -30,16 +30,19 @@ function wsaallotment_allotments_list() {
         <?php
         global $wpdb;
         $table_name = $wpdb->prefix . "allotment";
-    	$fields = wsaallotment_allotment_fields ();
-    	$labels = wsaallotment_allotment_labels ();
-        $select_list = implode(", ", array_keys($fields)) . ', allotment_id ';
-        $rows = $wpdb->get_results("SELECT $select_list from $table_name");
+        $table3_name = $wpdb->prefix . 'section';
+        $fields = wsaallotment_allotment_labels();
+    	unset($fields['allotment_section']);
+    	$select_list = implode(", ", array_keys($fields)) ;
+        $rows = $wpdb->get_results("SELECT $select_list from $table_name as t1
+LEFT OUTER JOIN $table3_name as t3 ON t3.section_id = t1.allotment_section
+");
          ?>
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
             <thead>
             <tr>
 	    <?php foreach ($fields as $field => $value) { ?>	    
-                <th class="manage-column ss-list-width"><?php echo $labels[$field]; ?></th>
+                <th class="manage-column ss-list-width"><?php echo $fields[$field]; ?></th>
 		<?php 	}  ?>    
             </tr>
             </thead>
@@ -50,7 +53,7 @@ function wsaallotment_allotments_list() {
                 <tr>
 		<?php foreach ($fields as $field => $value) { 
 		 	if ($field !== 'allotment_id'){ 
-		 		if ($field === 'allotment_section' || $field === 'allotment_nr'){ ?>
+		 		if ($field === 'section_name' || $field === 'allotment_nr'){ ?>
                     	<td class="manage-column ss-list-width"><a 	title="<?php _e('Update allotment', 'wsaallotment'); ?>" href="<?php
      echo admin_url('admin.php?page=wsaallotment_allotment_update&allotment_id=' . $fields['allotment_id']); 
 				?>"><?php
@@ -235,16 +238,18 @@ function wsaallotment_gardeners_list() {
         <?php
         global $wpdb;
         $table_name = $wpdb->prefix . "gardener";
-    	$fields = wsaallotment_gardener_fields ();
-		$labels = wsaallotment_gardener_labels ();
-        $select_list = implode(", ", array_keys($fields)) . ', gardener_id ';
-        $rows = $wpdb->get_results("SELECT $select_list from $table_name");
+        $table3_name = $wpdb->prefix . 'section';
+        $fields = wsaallotment_gardener_labels();
+        unset($fields['allotment_section']);
+        $select_list = implode(", ", array_keys($fields));
+        $rows = $wpdb->get_results("SELECT $select_list from $table_name as t1
+LEFT OUTER JOIN $table3_name as t3 ON t3.section_id = t1.allotment_section ");
          ?>
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
             <thead>
             <tr>
 	    <?php foreach ($fields as $field => $value) { ?>	    
-                <th class="manage-column ss-list-width"><?php echo $labels[$field]; ?></th>
+                <th class="manage-column ss-list-width"><?php echo $fields[$field]; ?></th>
 		<?php 	}  ?>    
             </tr>
             </thead>

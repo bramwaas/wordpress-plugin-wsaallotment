@@ -127,7 +127,7 @@ function wsaallotment_gardener_fields () {
  * @return array A
  */
 function wsaallotment_gardener_labels () {
-		return array('gardener_id' => __('Id' , 'wsaallotment'),
+		return array(
 			'user_login' => __('Login' , 'wsaallotment'),
 			'gardener_email' => __('Email' , 'wsaallotment'),
 			'gardener_initials' => __('Initials' , 'wsaallotment'),
@@ -136,7 +136,9 @@ function wsaallotment_gardener_labels () {
 			'gardener_first_name' => __('First name' , 'wsaallotment'),
 			'allotment_section' => __('Section' , 'wsaallotment'),
 			'section_name' => __('Section' , 'wsaallotment'),
-			'allotment_nr' => __('Nr' , 'wsaallotment')); 
+			'allotment_nr' => __('Nr' , 'wsaallotment'),
+			'gardener_id' => __('Id' , 'wsaallotment')
+		); 
 	
 }
 /**
@@ -196,7 +198,7 @@ function wsaallotment_allotment_fields () {
  * @return array A
  */
 function wsaallotment_allotment_labels () {
-	return array('allotment_id' => __('Id' , 'wsaallotment'),
+	return array(
 			'allotment_section' => __('Section' , 'wsaallotment'),
 			'section_name' => __('Section' , 'wsaallotment'),
 			'allotment_nr' => __('Nr' , 'wsaallotment'),
@@ -204,7 +206,8 @@ function wsaallotment_allotment_labels () {
 			'allotment_insurance' => __('Insurance' , 'wsaallotment'),
 			'allotment_insured' => __('Insured' , 'wsaallotment'),
 			'allotment_description' => __('Description' , 'wsaallotment'),
-			'section_description' => (__('Section' , 'wsaallotment') .' ' . __('Description' , 'wsaallotment'))
+			'section_description' => (__('Section' , 'wsaallotment') .' ' . __('Description' , 'wsaallotment')),
+			'allotment_id' => __('Id' , 'wsaallotment')
 	);
 	
 }
