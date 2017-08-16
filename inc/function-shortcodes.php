@@ -160,7 +160,7 @@ function wsaallotment_view_gardener ($row = null) {
    	foreach($row as $field => $value) { 
                $content .= '
 		<tr>
-			<th scope="row" class="ss-th-width">' . $labels[$field] . '</th>
+			<th scope="row" class="col-md-4 col-lg-3">' . $labels[$field] . '</th>
 			<td  class="ss-field-width">' . $value . '</td>
 		</tr>';
         	}
@@ -205,7 +205,7 @@ function wsaallotment_view_allotment ($row = null) {
    	foreach($row as $field => $value) { 
                $content .= '
 		<tr>
-			<th scope="row" class="ss-th-width">' . $labels[$field] . '</th>
+			<th scope="row" class="col-md-4 col-lg-3">' . $labels[$field] . '</th>
 			<td  class="ss-field-width">' . $value . '</td>
 		</tr>';
         	}
