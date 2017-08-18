@@ -178,8 +178,12 @@ function wsaallotment_allotment_create() {
 		//insert
 		global $wpdb;
 		$table_name = $wpdb->prefix . "allotment";
-		$fields = wsaallotment_allotment_fields ();
 		$labels = wsaallotment_allotment_labels ();
+		$fields = $labels;
+	    	unset($fields['section_name']);
+                unset($fields['allotment_id']);
+		unset($fields['section_description']);
+		$fields = array_fill_keys(array_keys($fields), NULL);
 		if (isset($_POST['insert'])) {
 			foreach($_POST as $field => $value) {
 				if ($field=='insert') {}
@@ -381,8 +385,11 @@ function wsaallotment_gardener_create() {
 		//insert
 		global $wpdb;
 		$table_name = $wpdb->prefix . "gardener";
-		$fields = wsaallotment_gardener_fields ();
 		$labels = wsaallotment_gardener_labels ();
+		$fields = $labels;
+	    	unset($fields['section_name']);
+                unset($fields['gardener_id']);
+		$fields = array_fill_keys(array_keys($fields), NULL);
 		if (isset($_POST['insert'])) {
 			foreach($_POST as $field => $value) {
 				if ($field=='insert') {}
