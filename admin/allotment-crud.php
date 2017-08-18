@@ -90,8 +90,12 @@ function wsaallotment_allotment_update() {
 		global $wpdb;
 		//update
 		$table_name = $wpdb->prefix . "allotment";
-		$fields = wsaallotment_allotment_fields ();
 		$labels = wsaallotment_allotment_labels ();
+		$fields = $labels;
+	    	unset($fields['section_name']);
+                unset($fields['allotment_id']);
+		unset($fields['section_description']);
+		$fields = array_fill_keys(array_keys($fields), NULL);
 		$select_list = implode(", ", array_keys($fields));
 		if (isset($_GET['allotment_id'])) {
 			$allotment_id= $_GET['allotment_id'];
@@ -291,8 +295,11 @@ function wsaallotment_gardener_update() {
 		global $wpdb;
 		//update
 		$table_name = $wpdb->prefix . "gardener";
-		$fields = wsaallotment_gardener_fields ();
 		$labels = wsaallotment_gardener_labels ();
+		$fields = $labels;
+	    	unset($fields['section_name']);
+                unset($fields['gardener_id']);
+		$fields = array_fill_keys(array_keys($fields), NULL);
 		$select_list = implode(", ", array_keys($fields));
 		if (isset($_GET['gardener_id'])) {
 			$gardener_id= $_GET['gardener_id'];
