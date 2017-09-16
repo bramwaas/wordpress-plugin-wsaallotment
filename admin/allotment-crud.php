@@ -8,6 +8,7 @@
  * @copyright  Copyright (c)  2017, Bram Waasdorp
  * @link       https://github.com/bramwaas/wordpress-plugin-wsaallotment
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * 2017-08-16 overbodige idś verwijderd uit lijst
  */
 /**
  * Admin list view on allotment
@@ -41,9 +42,9 @@ LEFT OUTER JOIN $table3_name as t3 ON t3.section_id = t1.allotment_section
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
             <thead>
             <tr>
-	    <?php foreach ($fields as $field => $value) { ?>	    
+	    <?php foreach ($fields as $field => $value) {if ($field !== 'allotment_id'){?>	    
                 <th class="manage-column ss-list-width"><?php echo $fields[$field]; ?></th>
-		<?php 	}  ?>    
+		<?php }	}  ?>    
             </tr>
             </thead>
             <tbody>
@@ -256,9 +257,9 @@ LEFT OUTER JOIN $table3_name as t3 ON t3.section_id = t1.allotment_section ");
         <table class='table table-striped wp-list-table widefat fixed striped posts'>
             <thead>
             <tr>
-	    <?php foreach ($fields as $field => $value) { ?>	    
+	    <?php foreach ($fields as $field => $value) { if ($field !== 'gardener_id'){ ?>	    
                 <th class="manage-column ss-list-width"><?php echo $fields[$field]; ?></th>
-		<?php 	}  ?>    
+		<?php 	} }  ?>    
             </tr>
             </thead>
             <tbody>
